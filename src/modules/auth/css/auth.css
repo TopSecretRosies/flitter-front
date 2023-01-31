@@ -177,7 +177,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.65);
+    background-color: #0dcaf0;
   }
   
   .wrap-login100 {
@@ -280,8 +280,8 @@
     -moz-transition: all 0.4s;
     transition: all 0.4s;
   
-    background: #d41872;
-    background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
+    background: #346ca1;
+    background: -webkit-linear-gradient(left, #5b8ba9, #40acb1, #64a5ad);
     background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
     background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
     background: linear-gradient(left, #a445b2, #d41872, #fa4299);
@@ -312,7 +312,7 @@
   
   .input100:focus + .focus-input100::after {
     left: 23px;
-    color: #d41872;
+    color: #3596a2;
   }
   
   .input100:focus + .focus-input100::before {
@@ -365,7 +365,7 @@
     height: 42px;
     border-radius: 21px;
   
-    background: #d41872;
+    background: #40aac5;
     background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
     background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
     background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
