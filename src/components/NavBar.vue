@@ -4,7 +4,7 @@
             <li>
                 <a href="#" class="logo">
                 <img src="../assets/logo_flipper.png"  />
-                <span class="nav-item">Flitter</span>
+                <span class="nav-item"><img src="../assets/logo_flipper_solo_letra.png" style="width: 150px; height: 50px"/></span>
             </a></li>
             <li><a href="#">
                 <i class="fas fa-house"></i>

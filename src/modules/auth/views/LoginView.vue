@@ -1,6 +1,6 @@
 <template>
   <div class="logo"><img src="../../../assets/logo.png"  /></div>
-  <span class="login100-form-title p-b-41"> Inicia sesión</span>
+  <span class="login100-form-title p-b-41" style="font-family:'FuenteTitulo'"> Inicia sesión</span>
   <form class="login100-form validate-form p-b-33 p-t-5">
     
     <div class="wrap-input100 validate-input" data-validate="Introduzca su correo">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="container-login100-form-btn m-t-32">
-      <button class="login100-form-btn">Login</button>
+      <button class="login100-form-btn" style="font-family:'FuenteTitulo'">Login</button>
     </div>
 
     <div class="container-login100-form-btn m-t-32">
