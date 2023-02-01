@@ -66,7 +66,6 @@ export default defineComponent({
     
     }
 
-
     nav {
         position: absolute;
         top: 0;

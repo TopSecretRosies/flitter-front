@@ -1,5 +1,6 @@
 <template>
-  <span class="login100-form-title p-b-41"> Registro </span>
+  <div class="logo"><img src="../../../assets/logo.png"  /></div>
+  <span class="login100-form-title p-b-41"> Regístrate </span>
   <form class="login100-form validate-form p-b-33 p-t-5"
         @submit.prevent="onSubmit">
     <div
@@ -84,3 +85,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+   
+</style>
