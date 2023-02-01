@@ -177,7 +177,9 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #141515;
+    background-image: url('../../../assets/fondoLogIn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .wrap-login100 {
@@ -203,6 +205,11 @@
   
   /*------------------------------------------------------------------
   [ Form ]*/
+
+  @font-face {
+    font-family: "FuenteTitulo";
+    src: url("../css/fonts/FuenteTitulo.ttf");
+  }
   
   .login100-form {
     width: 100%;

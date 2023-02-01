@@ -5,7 +5,7 @@
         @submit.prevent="onSubmit">
     <div
       class="wrap-input100 validate-input"
-      data-validate="Introduzca su nombre"
+      data-validate="Introduzca su nombre" style="font-family:'FuenteTitulo'"
     >
       <input
         v-model="userForm.name"
@@ -46,7 +46,7 @@
     </div>
 
     <div class="container-login100-form-btn m-t-32">
-      <button type="submit" class="login100-form-btn">Crear cuenta</button>
+      <button type="submit" class="login100-form-btn" style="font-family:'FuenteTitulo'">Crear cuenta</button>
     </div>
 
     <div class="container-login100-form-btn m-t-32">
