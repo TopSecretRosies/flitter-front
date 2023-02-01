@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const authApi = axios.create({
-    baseURL:'',
+    baseURL:'http://localhost:3000/api/',
     params: {
-        key: 'clave de api web hay que poner aqui'
+        key: ''
     }
 })
 
