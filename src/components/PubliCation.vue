@@ -3,9 +3,9 @@
             <img :src="publication.image">
         </div>
         <div class="item-info"> 
-            <div class="publication-author">{{ publication.author }}</div>
+            <div class="publication-author">{{ publication.author }} dijo: </div>
             <div class="publication-text"> {{ publication.text }}</div>
-            <div class="publication-kudos"> {{ publication.kudos }}</div>
+            <div class="publication-kudos"> {{ publication.kudos }} kudos</div>
             <div class="publication-date"> {{ publication.publicationDate }}</div>
         </div>
 </template>
