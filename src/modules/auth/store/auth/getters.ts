@@ -13,7 +13,7 @@ const getters: GetterTree<IAuthState, IState> = {
         return state.isLoading;
     },
 
-    getAuth(state) {
+    getUser(state) {
         return state.auth;
     },
 }
