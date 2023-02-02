@@ -1,6 +1,7 @@
 import { GetterTree } from "vuex";
 import { IPublicationState } from "./state";
-import { IState } from '../index';
+import { IState } from '@/store';
+
 
 
 
