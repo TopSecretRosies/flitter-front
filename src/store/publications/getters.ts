@@ -6,7 +6,7 @@ import { IState } from '../index';
 
 const getters: GetterTree<IPublicationState, IState> = {
     getPublications(state){
-        return state.publication
+        return state.publications
     },
 
     getIsLoading(state) {

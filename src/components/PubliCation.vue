@@ -1,21 +1,29 @@
 <template>
-    <div class="publication">
-      <slot name="image"></slot>
-      <div class="card-body">
-        <slot name="header"></slot>
-        <slot name="body"></slot>
-        <slot name="footer"></slot>
-      </div>
-    </div>
+        <div class="item-image"> 
+            <img :src="publication.image">
+        </div>
+        <div class="item-info"> 
+            <div class="publication-author">{{ publication.author }}</div>
+            <div class="publication-text"> {{ publication.text }}</div>
+            <div class="publication-kudos"> {{ publication.kudos }}</div>
+            <div class="publication-date"> {{ publication.publicationDate }}</div>
+        </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { Publications } from '@/models/Publications';
+import { defineComponent,PropType } from 'vue'
 
 export default defineComponent({
-    name: 'PubliCation',
-    setup() {
-        
-    },
+    props: {
+            publication: {
+                type: Object as PropType<Publications>, 
+                required: true,
+            },
+        },
 })
 </script>
+
+<style scoped>
+
+</style>

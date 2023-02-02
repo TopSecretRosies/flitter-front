@@ -1,13 +1,13 @@
 import { Publications } from '../../models/Publications';
  export interface IPublicationState {
-    publication: Publications[]
+    publications: Publications[]
     isLoading: boolean;
 
  }
 
  function state(): IPublicationState {
     return {
-        publication: [],
+        publications: [],
         isLoading: false
     }
  }

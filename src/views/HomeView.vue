@@ -1,44 +1,24 @@
 <template>
   <div class="home">
     <NavBar/>
-   
+    <div v-if="isLoading">Cargando...</div>
 
-    <div>
-      <PubliCation>
-        <template v-slot:image>
-            <div class="picture">
-              <img src="" class="imagen" alt="" />
-            </div>
-          </template>
-          <template v-slot:header>
-            <h2>Publicacion:{{publications.text}}</h2>
-          </template>
-          <template v-slot:body>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus reiciendis esse molestiae, iusto aliquam explicabo, voluptatem dicta ea minus repellendus,
-              exercitationem suscipit tenetur eveniet vitae sit magni ab asperiores iste.</p>
-          </template>
-          <template v-slot:footer>
-            <h2></h2>
-          </template>
-      </PubliCation>
-      </div>
+    <div class="publication-list" v-else>
+      <PubliCation v-for="publication in publications" :key="publication.id" :publication="publication"/>
+    </div>
     </div>
       
   
 </template>
 
 <script lang="ts">
-
+import { defineComponent } from 'vue';
 import NavBar from '@/components/NavBar.vue';
 import PubliCation from '@/components/PubliCation.vue';
 import usePublications from '@/composables/usePublications';
 
 
-
-
-  
-
-export default {
+export default defineComponent({
   name: 'HomeView',
 
   components: {
@@ -47,7 +27,7 @@ export default {
   },
 
   setup() {
-    const { fetchPublications, isLoading, publications } = usePublications();
+    const { publications, isLoading, fetchPublications } = usePublications();
    
     fetchPublications();
 
@@ -59,11 +39,12 @@ export default {
   },
 
   
-}
+})
 </script>
 
 <style scoped>
   * {
     text-align: center;
   }
+
 </style>

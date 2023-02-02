@@ -6,8 +6,8 @@ import { Publications } from '../../models/Publications';
 
 
 const  mutations: MutationTree<IPublicationState> = {
-    setPublications(state: IPublicationState, publication: Publications[]) {
-        state.publication = publication;
+    setPublications(state: IPublicationState, publications: Publications[]) {
+        state.publications = publications;
     },
 
     setIsLoading(state: IPublicationState, value: boolean) {
