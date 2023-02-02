@@ -1,8 +1,7 @@
 <template>
   <div class="logo"><img src="../../../assets/logo.png"  /></div>
   <span class="login100-form-title p-b-41"> Regístrate </span>
-  <form class="login100-form validate-form p-b-33 p-t-5"
-        @submit.prevent="onSubmit">
+  <form class="login100-form validate-form p-b-33 p-t-5">
     <div
       class="wrap-input100 validate-input"
       data-validate="Introduzca su nombre" style="font-family:'FuenteTitulo'"
@@ -55,16 +54,16 @@
   </form>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from "vue";
-import useAuth from '../composables/useAuth'
+
 
 
 
 export default {
   setup() {
 
-    const { store, createUser} = useAuth()
+   
 
     const userForm = ref({
       name: "",
@@ -74,13 +73,7 @@ export default {
 
     return {
       userForm,
-      store, 
-
-      onSubmit: async() => {
-         const { ok, message } = await createUser(userForm.value)
-        console.log(ok, message)
-        
-      }
+     
     };
   },
 };
