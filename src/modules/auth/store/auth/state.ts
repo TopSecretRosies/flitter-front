@@ -1,11 +1,15 @@
-import { Token } from '@/models/token';
-import { Users } from '../../../../models/users';
+
+
+import { Users } from '@/models/users';
+import { Auth } from '../../../../models/auth';
 
 
 export interface IAuthState {
-  auth: Users | null,
+  auth: Auth | null,
   isLoading: boolean,
-  token: Token |null 
+  token: Auth |null ,
+  id: Users | null
+  
 }
 
 function state(): IAuthState {
@@ -13,7 +17,9 @@ function state(): IAuthState {
   return{
     auth: null,
     isLoading: false,
-    token: null
+    token: null,
+    id: null
+    
   }
 }
 
