@@ -1,13 +1,12 @@
 
 import { MutationTree } from 'vuex';
 import { IAuthState } from './state';
-import { Token } from '@/models/token';
 import { Users } from '@/models/users';
 
 
 const mutations: MutationTree<IAuthState> = {
     // Añadimos el token al state
-    setToken(state: IAuthState, token: Token) {
+    setToken(state: IAuthState, token: Users) {
         state.token = token;
     },
 

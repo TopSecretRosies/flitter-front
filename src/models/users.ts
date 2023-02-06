@@ -1,7 +1,9 @@
 export interface Users {
-    _id:      string;
-    name:     string;
-    email:    string;
-    password: string;
-    __v:      number;
+    _id:       string;
+    username:  string;
+    email:     string;
+    password:  string;
+    roles:     string[];
+    createdAt: string;
+    updatedAt: string;
 }

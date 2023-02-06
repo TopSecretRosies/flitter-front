@@ -34,25 +34,35 @@
                 <i class="fas fa-question"></i>
                 <span class="nav-item">Help</span>
             </a></li>
-            <li><a href="#" class="logout">
+            <li> <router-link @click="logout" :to="{}">
                 <i class="fas fa-sign-out"></i>
                 <span class="nav-item">Log Out</span>
-            </a></li>
+            </router-link></li>
         </ul>
     </nav>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script lang="ts">
+import useAuth from "@/modules/auth/composables/useAuth";
+import { defineComponent } from "@vue/runtime-core";
 
 export default defineComponent({
+  name: "NavBar",
 
-    name: 'NavBar',
+  setup() {
+    // Borramos el token para salir de la página y que nos vuelva al login
+    const { deleteToken } = useAuth();
 
-    setup() {
-        
-    },
-})
+    const logout = () => {
+      deleteToken();
+    };
+
+    return {
+      logout,
+    };
+  },
+});
+
 </script>
 
 <style scoped>

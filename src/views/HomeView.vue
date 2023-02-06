@@ -2,10 +2,10 @@
   <div class="home">
     <div class="container-fluid">
       <div class="row">
-        <div class="col">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-3">
           <NavBar />
         </div>
-        <div class="col">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10 col-xl-9">
           <div class="header-top">
             <h4>Home</h4>
             <i class="far fa-star"></i>
@@ -16,8 +16,7 @@
             </div>
             <input type="text" placeholder="Que está sucediendo?" />
             <i class="far fa-image"></i>
-            <i class="fas fa-camera"></i>
-            <i class="far fa-chart-bar"></i>
+           
            
           </div>
           <div class v-if="isLoading">Cargando...</div>
@@ -31,7 +30,7 @@
           </div>
         </div>
           
-        <div class="col"></div>
+       
       </div>
     </div>
   </div>
@@ -65,6 +64,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
   .header-top {
     display: flex;
     align-items: center;
@@ -114,4 +114,34 @@ export default defineComponent({
     font-size: 2.5rem;
     margin: 1rem;
   }
+
+  @media only screen and (max-width:480px){
+
+    .header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid black;
+    margin-left: 80px;
+  }
+    .header-post {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    align-items: center;
+    border-bottom: 0.1rem solid #eee;
+  }
+
+  .header-post input{
+    width: 15rem;
+    height: 3rem;
+    border: 0.1rem solid #6de1e9;
+    border-radius: 3rem;
+    background-color: #d6e1e9;
+    
+  }
+
+ 
+}
 </style>
