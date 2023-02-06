@@ -1,46 +1,54 @@
 <template>
-    <nav>
-        <ul>
-            <li>
-                <a href="#" class="logo">
-                <img src="../assets/logo_flipper.png"  />
-                <span class="nav-item"><img src="../assets/logo_flipper_solo_letra.png" style="width: 150px; height: 50px"/></span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-house"></i>
-                <span class="nav-item">Home</span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-user"></i>
-                <span class="nav-item">Profile</span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-wallet"></i>
-                <span class="nav-item">Wallet</span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-chart-bar"></i>
-                <span class="nav-item">Analytics</span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-tasks"></i>
-                <span class="nav-item">Task</span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-cog"></i>
-                <span class="nav-item">Setting</span>
-            </a></li>
-            <li><a href="#">
-                <i class="fas fa-question"></i>
-                <span class="nav-item">Help</span>
-            </a></li>
-            <li> <router-link @click="logout" :to="{}">
-                <i class="fas fa-sign-out"></i>
-                <span class="nav-item">Log Out</span>
-            </router-link></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg color-nav">
+      <div class="container-fluid">
+        <img class="logo" src="../assets/logo.png" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{ name: 'home' }"
+                >Home</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{ name: 'profile' }"
+                >Perfil</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link d-none"
+                :to="{ }"
+                >Opciones</router-link
+              >
+            </li>
+          </ul>
+          <ul lass="navbar-nav">
+            <li class="nav-item">
+              <router-link @click="logout" class="nav-link float-right" :to="{}"
+                ><i
+                  class="fa-solid fa-right-from-bracket"
+                  title="Log Out"
+                  style="font-size: 40px; color: grey"
+                ></i
+              ></router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-</template>
+  </template>
+
 
 <script lang="ts">
 import useAuth from "@/modules/auth/composables/useAuth";
@@ -66,86 +74,35 @@ export default defineComponent({
 </script>
 
 <style scoped>
-    * {
-        margin: 0;
-        padding: 0;
-        outline: none;
-        border: none;
-        text-decoration: none;
-        box-sizing: border-box;
-    
-    }
 
-    nav {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        max-height: 100%;
-        left: 0;
-        background: black;
-        width: 90px;
-        overflow: hidden;
-        transition: width 0.2s linear;
-        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-        color: white;
+.color-nav {
+  background-color: black;
+  color: white;
+  font-family: "Pacifico", cursive;
+}
 
-    }
+.logo {
+  width: 22vh;
+  height: 17vh;
+}
 
-    .logo {
-        text-align: center;
-        display: flex;
-        transition: all 0.5s ease;
-        margin: 10px 0 0 px;
-    }
+.fake {
+  padding-left: 10px;
+}
 
-    img {
-        width: 79px;
-        height: 86px;
-        
-    }
+li {
+  color: white;
+  font-family: "Pacifico", cursive;
+  font-size: 18px;
+  list-style: none;
+}
 
-    .logo span {
-        font-weight: bold;
-        padding-left: 15px;
-        font-size: 18px;
-        text-transform: uppercase;
-    }
-    a {
-        position: relative;
-        color: white;
-        font-size: 14px;
-        display: table;
-        width: 300px;
-        padding: 10px;
-    }
+a {
+    color: white;
+}
 
-    .fas {
-        position: relative;
-        width: 70px;
-        height: 40px;
-        top: 14px;
-        font-size: 20px;
-        text-align: center;
-        
-    }
-
-    .nav-item {
-        position: relative;
-        top: 12px;
-        margin-left: 10px;
-    }
-
-    a:hover {
-        background: rgb(130, 126, 126);
-    }
-    nav:hover {
-        width: 280px;
-        transition: all 0.5s ease;
-    }
-
-    .logout {
-        position: absolute;
-        bottom: 0;
-    }
+a:hover {
+    color:aqua
+}
     
 </style>

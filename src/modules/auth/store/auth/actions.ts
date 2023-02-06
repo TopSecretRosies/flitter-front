@@ -26,7 +26,7 @@ const actions: ActionTree<IAuthState, IState> = {
     // FUnción para crear un usuario 
     async createUser({commit}, auth: Users) {
         try {
-            const { data } = await flitterApi.post('/auth//signup', auth);
+            const { data } = await flitterApi.post('/auth/signup', auth);
             commit('setToken', data);
             localStorage.setItem('token', data.token);
             router.push({name: 'home'})
@@ -42,7 +42,7 @@ const actions: ActionTree<IAuthState, IState> = {
     async fetchUser({commit}) {
         commit('setIsLoading', true);
         const { data } = await flitterApi.get<unknown, AxiosResponse<Users>>(
-            '/users/'
+            '/users/profile'
         );
         commit('setIsLoading', false);
         commit('setUser', data);
