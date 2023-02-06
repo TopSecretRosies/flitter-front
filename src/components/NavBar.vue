@@ -39,7 +39,7 @@
                 ><i
                   class="fa-solid fa-right-from-bracket"
                   title="Log Out"
-                  style="font-size: 40px; color: grey"
+                  style="font-size: 30px; color: white"
                 ></i
               ></router-link>
             </li>
