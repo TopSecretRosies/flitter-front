@@ -75,34 +75,45 @@ export default defineComponent({
 
 <style scoped>
 
+@font-face {
+  font-family: "FuenteTitulo";
+  src: url(../modules/auth/css/fonts/FuenteTitulo.ttf);}
+
+.navbar{
+margin-top: 10px;
+height: 80px;
+border-radius: 3rem;
+}
 .color-nav {
-  background-color: black;
+  background-image: url("../assets/fondoLogIn.jpg");
+  background-size: 50%;
   color: white;
-  font-family: "Pacifico", cursive;
 }
 
 .logo {
-  width: 22vh;
-  height: 17vh;
-}
-
-.fake {
-  padding-left: 10px;
+  margin-left: 50px;
+  width: 8%;
+  height: 6%;
 }
 
 li {
-  color: white;
-  font-family: "Pacifico", cursive;
-  font-size: 18px;
   list-style: none;
 }
 
 a {
+    font-family: "FuenteTitulo";
+    font-size: 20px;
     color: white;
 }
 
 a:hover {
-    color:aqua
+    color:#00c6eb;
+    font-size:22px;
+}
+
+.fa-solid {
+margin-top: 15px;
+margin-right: 50px;
 }
     
 </style>
