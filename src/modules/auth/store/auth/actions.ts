@@ -41,8 +41,8 @@ const actions: ActionTree<IAuthState, IState> = {
     //Función para mostrar el usuario con el que nos logueamos
     async fetchUser({commit}) {
         commit('setIsLoading', true);
-        const { data } = await flitterApi.get<unknown, AxiosResponse<Users>>(
-            '/users/profile'
+        const { data } = await flitterApi.get(
+            '/auth/profile'
         );
         commit('setIsLoading', false);
         commit('setUser', data);
