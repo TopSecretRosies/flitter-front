@@ -6,26 +6,12 @@
           <NavBar />
         </div>
 
-
         </div>
         <div id="barraFT">
           <a href="https://twitter.com/home">Para ti</a>
           <a href="https://twitter.com/home">Siguiendo</a>
         </div>
-        <div class="header-post">
-          <div class="header-img-wrapper">
-            <img id="profilePic" src="../assets/mujer.jpg" />
-          </div>
-          <input id="post" type="text" placeholder="¿Qué está pasando?" />
-
-          <div class="image-upload">
-            <label for="file-input">
-              <img src="../assets/img.png" />
-            </label>
-            <input id="file-input" accept="image/png,image/jpeg" type="file" />
-            <input id="flittear" type="submit">
-          </div>
-        </div>
+        
 
         <div id="busqueda">
           <input type="search" placeholder="Buscar en Flitter">
