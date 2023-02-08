@@ -1,5 +1,6 @@
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+import { Publications } from '../models/Publications';
 
 
 const usePublications = () => {
@@ -12,7 +13,7 @@ const usePublications = () => {
 
         //Actions
         fetchPublications: () => store.dispatch('publications/fetchPublications'),
-        
+        createPublications: (data: Publications) => store.dispatch('publications/createPublications', data),
 
     }
 }

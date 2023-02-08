@@ -19,21 +19,21 @@
         </div>
       </div>
 
-      <form>
+      <form @submit.prevent="savePost()">
         <div class="mb-3">
-          <input class="form-control" type="file" id="formFile" />
+          <input class="form-control" type="file" id="formFile"  />
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label"
             >¿Qué está pasando?</label
           >
-          <textarea
+          <textarea v-model.lazy="text"
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
         </div>
-        <button type="button" class="btn btn-primary btn-lg">Enviar</button>
+        <button class="btn btn-primary btn-lg">Enviar</button>
       </form>
 
     </div>
@@ -41,9 +41,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import useAuth from "@/modules/auth/composables/useAuth";
+import usePublications from "@/composables/usePublications";
+
+
 
 export default defineComponent({
   name: "ProfileView",
@@ -51,16 +54,40 @@ export default defineComponent({
   components: {
     NavBar,
   },
+
+  
+  
+
   setup() {
     const { fetchUser, auth, isLoading, getUser } = useAuth();
+    const {createPublications, publications } = usePublications();
     fetchUser(auth.value);
 
+    let author = ref("")
+    let text = ref("");
+    
+
+    const savePost = () => {
+
+      createPublications({author: author.value, text: text.value})
+      console.log(text)
+    }
+
     return {
+      author,
+      text,
       getUser,
       isLoading,
       fetchUser,
+      createPublications, 
+      savePost,
+      publications
+      
     };
+
+    
   },
+  
 });
 </script>
 

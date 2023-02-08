@@ -12,7 +12,9 @@ const  mutations: MutationTree<IPublicationState> = {
 
     setIsLoading(state: IPublicationState, value: boolean) {
         state.isLoading = value;
-    }
+    },
+
+
 }
 
 export default mutations
