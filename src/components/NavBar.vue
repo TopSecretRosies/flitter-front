@@ -25,16 +25,17 @@
                 >Perfil</router-link
               >
             </li>
+
             <li class="nav-item">
-              <router-link
-                class="nav-link d-none"
-                :to="{ }"
-                >Opciones</router-link
+              <router-link class="nav-link" :to="{ name: 'config' }"
+                >Configuración</router-link
               >
             </li>
+            
           </ul>
-          <ul lass="navbar-nav">
+          <ul class="navbar-nav">
             <li class="nav-item">
+<<<<<<< HEAD
               <router-link class="nav-link float-right" :to="{ name: 'login'}"
                 ><i
                   class="fa-solid fa-right-to-bracket"
@@ -47,6 +48,14 @@
           <ul lass="navbar-nav">
             <li class="nav-item">
               <router-link @click="logout" class="nav-link float-right" :to="{ name: 'home'}"
+=======
+              <router-link @click="logout" class="nav-link" :to="{name: 'auth'}"
+                ><i class="fa-solid fa-user"></i>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link @click="logout" class="nav-link float-right" :to="{name: 'home'}"
+>>>>>>> 08e9b443addd28f0c3ebe4bbd6c45ab514cbe5b5
                 ><i
                   class="fa-solid fa-right-from-bracket"
                   title="Log Out"
