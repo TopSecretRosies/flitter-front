@@ -3,6 +3,12 @@
     <NavBar />
     <div class="container-fluid">
       <div class="row">
+
+          <NavBar />
+        </div>
+
+       
+
         <div id="busqueda">
           <input type="search" placeholder="Buscar en Flitter" />
           <img src="../assets/lupa.svg" alt="lupa" />
@@ -90,25 +96,6 @@ export default defineComponent({
   align-items: center;
   padding: 1rem;
   border-bottom: 0.1rem solid #eee;
-}
-
-#barraFT {
-  margin-top: 5%;
-  margin-left: 6.3%;
-  display: flex;
-  justify-content: center;
-  width: 845px;
-  height: 10px;
-  background-color: #fff;
-}
-
-#barraFT a {
-  margin-top: 10px;
-  margin-left: 20px;
-  color: black;
-  text-decoration: none;
-  font-family: "FuenteTitulo";
-  font-size: large;
 }
 
 .image-upload {

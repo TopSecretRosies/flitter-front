@@ -35,15 +35,35 @@
           </ul>
           <ul class="navbar-nav float-right d-flex align-items-md-center">
             <li class="nav-item">
+
              <p>Bienvenido/a </p>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" :to="{name: 'auth'}"
+
+         
+                ><i
+                  class="fa-solid fa-right-to-bracket"
+                  title="Log In"
+                  style="font-size: 30px; color: white"
+                ></i
+              ></router-link>
+            </li>
+          </ul>
+          <ul lass="navbar-nav">
+            <li class="nav-item">
+              <router-link @click="logout" class="nav-link float-right" :to="{ name: 'home'}"
+
+            
+
                 ><i class="fa-solid fa-user"></i>
               </router-link>
             </li>
             <li class="nav-item">
+
               <router-link @click="logout" class="nav-link " :to="{name: 'home'}"
+
+
                 ><i
                   class="fa-solid fa-right-from-bracket"
                   title="Log Out"
@@ -52,6 +72,7 @@
               ></router-link>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
