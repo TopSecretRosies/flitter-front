@@ -54,7 +54,7 @@ const actions: ActionTree<IAuthState, IState> = {
         commit("deleteToken");
         localStorage.removeItem("token");
         localStorage.removeItem("username");
-        router.push({ name: "auth" });
+        router.push({ name: "home" });
     },
 }
 

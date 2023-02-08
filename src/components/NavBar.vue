@@ -33,14 +33,17 @@
             </li>
             
           </ul>
-          <ul class="navbar-nav">
+          <ul class="navbar-nav float-right d-flex align-items-md-center">
             <li class="nav-item">
-              <router-link @click="logout" class="nav-link" :to="{name: 'auth'}"
+             <p>Bienvenido/a </p>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{name: 'auth'}"
                 ><i class="fa-solid fa-user"></i>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link @click="logout" class="nav-link float-right" :to="{name: 'home'}"
+              <router-link @click="logout" class="nav-link " :to="{name: 'home'}"
                 ><i
                   class="fa-solid fa-right-from-bracket"
                   title="Log Out"
@@ -64,13 +67,14 @@ export default defineComponent({
 
   setup() {
     // Borramos el token para salir de la página y que nos vuelva al login
-    const { deleteToken } = useAuth();
+    const { deleteToken, getUser } = useAuth();
 
     const logout = () => {
       deleteToken();
     };
 
     return {
+      getUser,
       logout,
     };
   },
@@ -84,15 +88,10 @@ export default defineComponent({
   font-family: "FuenteTitulo";
   src: url(../modules/auth/css/fonts/FuenteTitulo.ttf);}
 
-.navbar{
-margin-top: 10px;
-height: 80px;
-border-radius: 3rem;
-}
+
 .color-nav {
   background-image: url("../assets/fondoLogIn.jpg");
-  background-size: 50%;
-  color: white;
+  
 }
 
 .logo {
@@ -115,6 +114,16 @@ a:hover {
     color:#00c6eb;
     font-size:22px;
 }
+
+p {
+  color: white;
+  margin: 0 32px;
+  font-family: "FuenteTitulo";
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
 
 .fa-solid {
 margin-top: 15px;

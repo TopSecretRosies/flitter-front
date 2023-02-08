@@ -15,10 +15,9 @@ const actions: ActionTree<IPublicationState, IState> = {
         commit('setPublications', data);
         console.log(data)
     },
-    async createPublications({commit}) {
-        commit("setIsLoading", true);
-        const{ data } = await flitterApi.post<unknown, AxiosResponse<Publications[]>>(
-            '/posts'
+    async createPublications({commit}, post: Publications) {
+        const{ data } = await flitterApi.post(
+            '/posts', post
         );
         commit('setIsLoading', false);
         commit('setPublications', data);

@@ -1,68 +1,27 @@
 <template>
   <div class="home">
+    <NavBar />
     <div class="container-fluid">
       <div class="row">
-        <div class="col">
-          <NavBar />
-        </div>
-
-        </div>
-        <div id="barraFT">
-          <a href="https://twitter.com/home">Para ti</a>
-          <a href="https://twitter.com/home">Siguiendo</a>
-        </div>
-        
-
         <div id="busqueda">
-          <input type="search" placeholder="Buscar en Flitter">
-          <img src="../assets/lupa.svg" alt="lupa">
-        </div>
-
-        <div class="follow">
-          <h3 class="follow_heading">A quién seguir</h3>
-          <div class="follow_user">
-            <div class="follow_user_img">
-              <img src="../assets/shakira.jpeg">
-            </div>
-            <div class="follow_user_info">
-              <h4>Shakira</h4>
-              <p>@Shakira</p>
-            </div>
-            <button type="button" class="follow_btn">Seguir</button>
-          </div>
-          <div class="follow_user">
-            <div class="follow_user_img">
-              <img src="../assets/monica.jpeg">
-            </div>
-            <div class="follow_user_info">
-              <h4>Mónica Naranjo</h4>
-              <p>@MonicaNaranjo</p>
-            </div>
-            <button type="button" class="follow_btn">Seguir</button>
-          </div>
-          <div class="follow_link">
-            <a href="#">Mostrar más</a>
-          </div>
-          <footer class="follow_footer">
-            <ul>
-              <li><a href="#">Condiciones</a></li>
-              <li><a href="#">Politica de Privacidad</a></li>
-              <li><a href="#">Cookies</a></li>
-              <li><a href="#">Acerca de</a></li>
-              <li><a href="#">Más</a></li>
-            </ul>
-          </footer>
+          <input type="search" placeholder="Buscar en Flitter" />
+          <img src="../assets/lupa.svg" alt="lupa" />
         </div>
       </div>
-
-      <div class v-if="isLoading">Cargando...</div>
-      <div v-else>
-        <PubliCation v-for="publication in publications" :key="publication.id" :publication="publication" />
+      <div class="col col-sm-1 col-md-10 col-lg-12 text-center">
+        <div class v-if="isLoading">Cargando...</div>
+        <div v-else>
+          <PubliCation
+            v-for="publication in publications"
+            :key="publication.id"
+            :publication="publication"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="col"></div>
-
+ 
+  </div>
 </template>
 
 <script lang="ts">
@@ -160,7 +119,7 @@ export default defineComponent({
   display: flex;
 }
 
-.image-upload>input {
+.image-upload > input {
   display: none;
 }
 
@@ -168,11 +127,10 @@ export default defineComponent({
   width: 5%;
 }
 
-
 .header-img-wrapper {
   width: 5rem;
   height: 5rem;
-  
+
   margin-left: 60px;
 }
 .header-img-wrapper img {
@@ -189,8 +147,7 @@ export default defineComponent({
   margin-left: 40px;
   width: 845px;
   height: 50px;
-    border-bottom: 0.1rem solid #eee;
-
+  border-bottom: 0.1rem solid #eee;
 }
 
 .header-post #post {
@@ -332,4 +289,3 @@ export default defineComponent({
   margin: 0.3rem;
 }
 </style>
-
