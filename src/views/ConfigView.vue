@@ -32,13 +32,8 @@
                 </div>
               </div>
              
-              <div class="form-group text-center">
-                <div class="form-check">
-                  <label class="form-check-label" for="gridCheck">
-                    Check me out
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-primary ">Sign in</button>
+              <div class="form-group text-center mb-4">
+                <button type="submit" class="btn btn-primary ">Darse de baja</button>
               </div>
              
             </form>
