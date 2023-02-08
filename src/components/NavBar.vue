@@ -16,12 +16,12 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <router-link class="nav-link" :to="{ name: 'home' }"
+              <router-link class="nav-link" :to="{ name: 'home'}"
                 >Home</router-link
               >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" :to="{ name: 'profile' }"
+              <router-link class="nav-link" :to="{ name: 'profile'}"
                 >Perfil</router-link
               >
             </li>
