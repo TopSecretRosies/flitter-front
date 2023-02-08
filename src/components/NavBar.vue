@@ -35,7 +35,18 @@
           </ul>
           <ul lass="navbar-nav">
             <li class="nav-item">
-              <router-link @click="logout" class="nav-link float-right" :to="{}"
+              <router-link class="nav-link float-right" :to="{ name: 'login'}"
+                ><i
+                  class="fa-solid fa-right-to-bracket"
+                  title="Log In"
+                  style="font-size: 30px; color: white"
+                ></i
+              ></router-link>
+            </li>
+          </ul>
+          <ul lass="navbar-nav">
+            <li class="nav-item">
+              <router-link @click="logout" class="nav-link float-right" :to="{ name: 'home'}"
                 ><i
                   class="fa-solid fa-right-from-bracket"
                   title="Log Out"
@@ -44,6 +55,7 @@
               ></router-link>
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
