@@ -4,6 +4,6 @@ export interface Publications {
     createdAt?: string;
     updatedAt?: string;
     author?:   string;
-    image:    void;
+    image:    string;
   
 }
