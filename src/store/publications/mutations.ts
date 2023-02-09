@@ -1,6 +1,7 @@
 import { MutationTree } from "vuex";
 import { IPublicationState } from "./state";
 import { Publications } from '../../models/Publications';
+import { Users } from '../../models/users';
 
 
 

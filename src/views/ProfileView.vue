@@ -21,7 +21,7 @@
 
       <form @submit.prevent="savePost()">
         <div class="mb-3">
-          <input class="form-control" type="file" id="formFile"  />
+          <input @change="handleImage" class="form-control" type="file" name="image" accept="png" id="formFile"  />
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label"
@@ -29,8 +29,10 @@
           >
           <textarea v-model.lazy="text"
             class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
+            id="text"
+            rows="12"
+            maxlength="256"
+            placeholder="Introduce un texto máximo 256 caracteres"
           ></textarea>
         </div>
         <button class="btn btn-primary btn-lg">Enviar</button>
@@ -44,7 +46,7 @@
 import { defineComponent, ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import useAuth from "@/modules/auth/composables/useAuth";
-import usePublications from "@/composables/usePublications";
+
 
 
 
@@ -55,39 +57,53 @@ export default defineComponent({
     NavBar,
   },
 
-  
-  
 
   setup() {
     const { fetchUser, auth, isLoading, getUser } = useAuth();
-    const {createPublications, publications } = usePublications();
+   
     fetchUser(auth.value);
 
-    let author = ref("")
+
     let text = ref("");
-    
+    let image = ref("")
+
+    const handleImage = (event:any) => {
+      image.value = event.target.files[0]
+    }
+
 
     const savePost = () => {
+      let data = new FormData();
+      data.append('image', image.value)
+      data.append('text', text.value)
+      console.log(image)
+      if(text.value === "" || image.value === "") {
+        alert("Debes de poner un texto o una imagen")
+      } else {
+         fetch("http://localhost:3000/api/posts/", {
+          method: "POST",
+          body: data,
 
-      createPublications({author: author.value, text: text.value})
-      console.log(text)
+         })
+         .then(res => console.log(res))
+
+      }
+
     }
 
     return {
-      author,
+      image,
       text,
       getUser,
       isLoading,
       fetchUser,
-      createPublications, 
       savePost,
-      publications
-      
+      handleImage
+
     };
 
-    
+
   },
-  
 });
 </script>
 
