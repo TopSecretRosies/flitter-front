@@ -1,9 +1,9 @@
 export interface Publications {
-    _id?:             string;
-    author:          string;
-    text:            string;
-    image?:           string;
-    publicationDate?: string;
-    kudos?:           number;
-    __v?:             number;
+    _id?:       string;
+    text:      string;
+    createdAt?: string;
+    updatedAt?: string;
+    author?:   string;
+    image:    string;
+  
 }

@@ -1,16 +1,20 @@
-import { Auth } from '@/models/auth';
+
 import { Publications } from '../../models/Publications';
+import { Users } from '../../models/users';
  export interface IPublicationState {
     publications: Publications[]
     isLoading: boolean;
-    token: Auth |null ,
+    
+  
+    
  }
 
  function state(): IPublicationState {
     return {
         publications: [],
         isLoading: false, 
-        token: null
+        
+        
     }
  }
 

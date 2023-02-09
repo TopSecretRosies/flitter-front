@@ -10,6 +10,7 @@ const usePublications = () => {
         //Getters
         publications: computed(()=> store.getters['publications/getPublications']),
         isLoading: computed(() => store.getters['publications/getIsLoading']),
+        
 
         //Actions
         fetchPublications: () => store.dispatch('publications/fetchPublications'),

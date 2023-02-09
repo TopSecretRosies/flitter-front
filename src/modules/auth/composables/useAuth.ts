@@ -12,7 +12,6 @@ const useAuth = () => {
        auth: computed(() => store.getters['auth/getToken']),
        isLoading: computed(() => store.getters["auth/getIsLoading"]),
        getUser: computed(() => store.getters['auth/getUser']),
-
        //Actions 
        createUser: (data: Users) => store.dispatch('auth/createUser', data),
        fetchToken: (data: Auth) => store.dispatch('auth/fectToken', data),

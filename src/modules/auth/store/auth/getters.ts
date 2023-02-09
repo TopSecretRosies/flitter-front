@@ -16,6 +16,7 @@ const getters: GetterTree<IAuthState, IState> = {
     getUser(state) {
         return state.auth;
     },
+
 }
 
 
