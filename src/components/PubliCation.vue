@@ -1,21 +1,22 @@
 <template>
-    <div class="posts">
-        <div class="post">
-            <div class="user-avatar">
+    <div class="post flex-comun">
+        <div class="row">
+            <div class="user-avatar col-sm-5" >
                 <img src="../assets/mujer.jpg"/>
             </div>
             <div class="post-content">
-                <div class="post-user-info">
+                <div class="post-user-info col-sm-2">
                     <h4>{{ publication.author }}</h4>
                     <i class="fas fa-check-circle"></i>
                     <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
                 </div>
-                    <p class="post-text"> {{ publication.text }}</p>
+                    <p class="post-text col-sm-7"> {{ publication.text }}</p>
                     <div class="post-image">
                         <!-- <img :src="publication.image"/> -->
-                        <img class="img-fluid" :src="publication.image"/>
+                        <img class="img-fluid" :src="publication.image"
+                        style="width: 40%;"/>
                     </div>
-                    <div class="post-icons">
+                    <div class="post-icons col-sm-5">
                         <i class="far fa-comment"></i>
                         <i class="fas fa-retweet"></i>
                         <i class="far fa-heart"></i>
@@ -84,7 +85,7 @@ export default defineComponent({
     margin-bottom: 1rem;
    }
 
-   .post {
+   #post {
     display: flex;
     padding: 1.5rem;
     border-bottom: 0.1 rem solid #eee;
