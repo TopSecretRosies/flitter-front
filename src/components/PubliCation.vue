@@ -45,10 +45,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+
 * {
 max-width: 100%;
 }
-
 .user-avatar {
 width: 6rem;
 height: 6rem;
@@ -65,7 +66,15 @@ border-radius: 50%;
 .post-user-info {
 display: flex;
 margin: 1rem 14px;
-color:rgb(31, 197, 243);
+}
+
+@font-face {
+    font-family: "FuenteTitulo";
+    src: url(../assets/FuenteTitulo.ttf);
+}
+@font-face {
+    font-family: "FuenteRegular";
+    src: url(../assets/FuenteRegular.ttf);
 }
 .post-user-info h4 {
 font-family: "FuenteTitulo";
@@ -74,6 +83,31 @@ font-size: 1.6rem;
 align-items: center;
 margin-right: 0.5rem;
 }
+.post-user-info i {
+font-size: 1.6rem;
+color:rgb(31, 197, 243);
+margin-right: 0.5rem;
+}
 
+.post-text {
+font-family: "FuenteRegular";
+font-size: 1rem;
+margin-bottom: 1rem;
+}
+
+#post {
+display: flex;
+padding: 1.5rem;
+border-bottom: 0.1 rem solid #eee;
+}
+
+.post-icons {
+margin-top: 1rem;
+}
+.post-icons i {
+font-size: 1.2rem;
+color: #868383;
+margin-right: 6rem;
+}
 
 </style>
