@@ -6,11 +6,11 @@
         <div class="posts">
           <div class="post">
             <div class="user-avatar">
-              <img src="../assets/mujer.jpg" />
+              <img :src="getUser.user.avatar" />
             </div>
             <div class="post-content">
               <div class="post-user-info">
-                <h2 class="card-title">{{ getUser.username }}</h2>
+                <h2 class="card-title">{{ getUser.user.username }}</h2>
                 <i class="fas fa-check-circle"></i>
                 <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
               </div>
@@ -30,14 +30,34 @@
           <textarea v-model.lazy="text"
             class="form-control"
             id="text"
-            rows="12"
+            rows="6"
             maxlength="256"
             placeholder="Introduce un texto máximo 256 caracteres"
           ></textarea>
         </div>
         <button class="btn btn-primary btn-lg">Enviar</button>
       </form>
-
+      <div class="post-content" v-for="post in getUser.postList" :key="post.id" :post="post">
+        <div class="post-user-info">
+            <h4>{{ post.author }}</h4>
+            <i class="fas fa-check-circle"></i>
+            <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
+        </div>
+            <p class="post-text"> {{ post.text }}</p>
+            <div class="post-image">
+                <!-- <img :src="publication.image"/> -->
+                <img class="img-fluid" :src="post.image"/>
+            </div>
+            <div class="post-icons">
+                <i class="far fa-comment"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="far fa-heart"></i>
+                <!-- <p>{{ publication.kudos }} kudos</p> -->
+                <i class="fas fa-share-alt"></i>
+                    
+            </div>
+                    
+      </div>
     </div>
   </div>
 </template>
