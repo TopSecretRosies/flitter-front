@@ -14,9 +14,9 @@
             <p class="post-text row col-12" style="background-color: yellow;"> {{ publication.text }}</p>
             <div class="post-image col-12" >
                 <!-- <img :src="publication.image"/> -->
-                <img class="img-fluid" :src="publication.image" style="width: 40%;" />
+                <img class="img-fluid" :src="publication.image" />
             </div>
-            <div class="post-icons col-12 " style="background-color: violet;">
+            <div class="post-icons col-12 " style="background-color: violet; ">
                 <i class="far fa-comment"></i>
                 <i class="fas fa-retweet"></i>
                 <i class="far fa-heart"></i>
@@ -63,7 +63,7 @@ border-radius: 50%;
 
 .post-user-info {
 display: flex;
-margin: 1rem 14px;
+margin: 1rem 4px;
 }
 
 @font-face {
@@ -89,21 +89,26 @@ margin-right: 0.5rem;
 .post-image{
 width: 100%;
 }
+.post-image img{
+width: 30%;
+border: 0.1rem solid rgba(0, 0, 0, 0.438);
+border-radius: 2%;
+}
 .post-text {
 font-family: "FuenteRegular";
 font-size: 1rem;
-margin-bottom: 1rem;
+margin-bottom: 0.5rem;
 }
 
-#post {
+.post {
 display: flex;
-padding: 1.5rem;
+padding: 0.5rem;
 border-bottom: 0.1 rem solid #eee;
 }
 
 
 .post-icons {
-margin-top: 1rem;
+margin-top: 0.2rem;
 }
 .post-icons i {
 font-size: 1rem;
