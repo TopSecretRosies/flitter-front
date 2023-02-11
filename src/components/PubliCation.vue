@@ -101,6 +101,7 @@ padding: 1.5rem;
 border-bottom: 0.1 rem solid #eee;
 }
 
+
 .post-icons {
 margin-top: 1rem;
 }
