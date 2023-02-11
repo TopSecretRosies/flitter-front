@@ -1,11 +1,11 @@
 <template>
     <div class="post container">
         <div class="row">
-            <div class="user-avatar col-6 " style="background-color: green; ">
+            <div class="user-avatar col-1 " style="background-color: green; ">
                 <img src="../assets/mujer.jpg" />
             </div>
-            <div class="post-content col-6">
-                <div class="post-user-info" style="background-color: blue;">
+            <div class="post-content col-1">
+                <div class="post-user-info">
                     <h4>{{ publication.author }}</h4>
                     <i class="fas fa-check-circle"></i>
                     <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
@@ -49,9 +49,31 @@ export default defineComponent({
 max-width: 100%;
 }
 
+.user-avatar {
+width: 6rem;
+height: 6rem;
+flex-shrink: 0;
+}
 .user-avatar img {
-max-width: 40% ;
+margin-top: 16%;
+width: 100%;
+height: 65%;
 object-fit: cover;
 border-radius: 50%;
 }
+
+.post-user-info {
+display: flex;
+margin: 1rem 14px;
+color:rgb(31, 197, 243);
+}
+.post-user-info h4 {
+font-family: "FuenteTitulo";
+color: black;
+font-size: 1.6rem;
+align-items: center;
+margin-right: 0.5rem;
+}
+
+
 </style>
