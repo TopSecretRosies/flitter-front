@@ -12,7 +12,7 @@
                 </div>
             </div>
             <p class="post-text row col-12" style="background-color: yellow;"> {{ publication.text }}</p>
-            <div class="post-image">
+            <div class="post-image col-12" >
                 <!-- <img :src="publication.image"/> -->
                 <img class="img-fluid" :src="publication.image" style="width: 40%;" />
             </div>
@@ -45,8 +45,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
-
 * {
 max-width: 100%;
 }
@@ -84,11 +82,13 @@ align-items: center;
 margin-right: 0.5rem;
 }
 .post-user-info i {
-font-size: 1.6rem;
+font-size: 1rem;
 color:rgb(31, 197, 243);
 margin-right: 0.5rem;
 }
-
+.post-image{
+width: 100%;
+}
 .post-text {
 font-family: "FuenteRegular";
 font-size: 1rem;
@@ -105,7 +105,7 @@ border-bottom: 0.1 rem solid #eee;
 margin-top: 1rem;
 }
 .post-icons i {
-font-size: 1.2rem;
+font-size: 1rem;
 color: #868383;
 margin-right: 6rem;
 }
