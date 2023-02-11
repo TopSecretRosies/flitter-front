@@ -12,7 +12,7 @@ const mutations: MutationTree<IAuthState> = {
     },
 
     // Añadimos el usuario con permisos al state
-    setUser(state: IAuthState, auth: Users) {
+    setUser(state: IAuthState, auth: Users[]) {
         state.auth = auth;
     },
 

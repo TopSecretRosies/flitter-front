@@ -5,7 +5,7 @@ import { Auth } from '../../../../models/auth';
 
 
 export interface IAuthState {
-  auth: Auth | null,
+  auth: Auth[],
   isLoading: boolean,
   token: Auth |null ,
   
@@ -14,7 +14,7 @@ export interface IAuthState {
 function state(): IAuthState {
 
   return{
-    auth: null,
+    auth: [],
     isLoading: false,
     token: null,
     

@@ -36,10 +36,10 @@
           <ul class="navbar-nav float-right d-flex align-items-md-center">
             <li class="nav-item">
 
-             <p>Bienvenido/a </p>
+             <p>Bienvenido/a {{getUser.username}}</p>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" :to="{name: 'auth'}"
+              <router-link class="nav-link" :to="{name: 'login'}"
                 ><i class="fa-solid fa-user"></i></router-link>
             </li>
           </ul>
