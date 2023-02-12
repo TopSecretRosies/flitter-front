@@ -1,7 +1,7 @@
 <template>
     <div class="post container">
         <div class="row">
-            <div class="user-avatar col-2 " style="background-color: green; ">
+            <div class="user-avatar col-2">
                 <img src="../assets/mujer.jpg" />
             </div>
             <div class="post-content col-3">
@@ -11,12 +11,12 @@
                     <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
                 </div>
             </div>
-            <p class="post-text row col-12" style="background-color: yellow;"> {{ publication.text }}</p>
+            <p class="post-text row col-12"> {{ publication.text }}</p>
             <div class="post-image col-12" >
                 <!-- <img :src="publication.image"/> -->
                 <img class="img-fluid" :src="publication.image" />
             </div>
-            <div class="post-icons col-12 " style="background-color: violet; ">
+            <div class="post-icons col-12">
                 <i class="far fa-comment"></i>
                 <i class="fas fa-retweet"></i>
                 <i class="far fa-heart"></i>
@@ -88,20 +88,18 @@ color:rgb(31, 197, 243);
 width: 100%;
 }
 .post-image img{
-width: 50%;
+width:40%;
 border: 0.1rem solid rgba(0, 0, 0, 0.438);
 border-radius: 2%;
 }
 .post-text {
 font-family: "FuenteRegular";
 font-size: 1rem;
-margin-top: 0.5rem;
 margin-bottom: 0.5rem;
+margin-top: -3rem;
+margin-left: 8.3%;
 }
 
-.post-text p {
-align-content: center;
-}
 .post {
 display: flex;
 padding: 0.5rem;
