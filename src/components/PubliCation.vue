@@ -4,7 +4,7 @@
             <div class="user-avatar col-2 " style="background-color: green; ">
                 <img src="../assets/mujer.jpg" />
             </div>
-            <div class="post-content col-2">
+            <div class="post-content col-3">
                 <div class="post-user-info">
                     <h4>{{ publication.author }}</h4>
                     <i class="fas fa-check-circle"></i>
@@ -48,17 +48,21 @@ export default defineComponent({
 * {
 max-width: 100%;
 }
-
+.user-avatar {
+    width: 6rem;
+    height: 6rem;
+   }
 .user-avatar img {
 object-fit: cover;
-width: 80%;
-height:100%;
+margin-top: 16%;
+width: 100%;
+height:80%;
 border-radius: 50%;
 }
 
 .post-user-info {
 display: flex;
-margin: 1rem 4px;
+margin: 1rem 1px;
 }
 
 @font-face {
@@ -79,7 +83,6 @@ margin-right: 0.5rem;
 .post-user-info i {
 font-size: 1rem;
 color:rgb(31, 197, 243);
-margin-right: 0.5rem;
 }
 .post-image{
 width: 100%;
