@@ -1,10 +1,10 @@
 <template>
     <div class="post container">
         <div class="row">
-            <div class="user-avatar col-1 " style="background-color: green; ">
+            <div class="user-avatar col-2 " style="background-color: green; ">
                 <img src="../assets/mujer.jpg" />
             </div>
-            <div class="post-content col-1">
+            <div class="post-content col-2">
                 <div class="post-user-info">
                     <h4>{{ publication.author }}</h4>
                     <i class="fas fa-check-circle"></i>
@@ -72,7 +72,7 @@ margin: 1rem 4px;
 .post-user-info h4 {
 font-family: "FuenteTitulo";
 color: black;
-font-size: 1.6rem;
+font-size: 1.3rem;
 align-items: center;
 margin-right: 0.5rem;
 }
