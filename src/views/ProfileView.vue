@@ -49,7 +49,7 @@
         <h1>Holaaaaaaa</h1>
         <div
           class="post-content"
-          v-for="post in getUser.user"
+          v-for="post in getUser.postList"
           :key="post.id"
           :post="post"
         >
