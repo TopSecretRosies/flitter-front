@@ -6,11 +6,11 @@
         <div class="posts">
           <div class="post">
             <div class="user-avatar">
-              <img :src="getUser.user?.avatar" />
+              <img :src="getUser.user.avatar" />
             </div>
             <div class="post-content">
               <div class="post-user-info">
-                <h2 class="card-title">{{ getUser.user?.username}}</h2>
+                <h2 class="card-title">{{ getUser.user.username}}</h2>
                 <i class="fas fa-check-circle"></i>
                 <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
               </div>
@@ -81,26 +81,20 @@
 import { defineComponent, ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import useAuth from "@/modules/auth/composables/useAuth";
-
 export default defineComponent({
   name: "ProfileView",
-
   components: {
     NavBar,
   },
-
   setup() {
     const { fetchUser, auth, isLoading, getUser } = useAuth();
-
     fetchUser(auth.value);
-
     let text = ref("");
     let image = ref("");
-
     const handleImage = (event: any) => {
       image.value = event.target.files[0];
     };
-
+    const token = localStorage.getItem('token')
     const savePost = () => {
       let data = new FormData();
       data.append("image", image.value);
@@ -112,10 +106,10 @@ export default defineComponent({
         fetch("http://localhost:3000/api/posts/", {
           method: "POST",
           body: data,
+          headers: {'x-access-token': `${token}`}
         }).then((res) => console.log(res));
       }
     };
-
     return {
       image,
       text,
@@ -135,25 +129,21 @@ export default defineComponent({
   height: 6rem;
   flex-shrink: 0;
 }
-
 .user-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-
 .post-user-info {
   display: flex;
   margin: 1rem 14px;
 }
-
 .post {
   display: flex;
   padding: 1.5rem;
   border-bottom: 0.1 rem solid #eee;
 }
-
 .post-img {
   width: 48rem;
   height: 30rem;
