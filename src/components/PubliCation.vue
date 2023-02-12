@@ -48,16 +48,11 @@ export default defineComponent({
 * {
 max-width: 100%;
 }
-.user-avatar {
-width: 6rem;
-height: 6rem;
-flex-shrink: 0;
-}
+
 .user-avatar img {
-margin-top: 16%;
-width: 100%;
-height: 65%;
 object-fit: cover;
+width: 80%;
+height:100%;
 border-radius: 50%;
 }
 
@@ -90,16 +85,20 @@ margin-right: 0.5rem;
 width: 100%;
 }
 .post-image img{
-width: 30%;
+width: 50%;
 border: 0.1rem solid rgba(0, 0, 0, 0.438);
 border-radius: 2%;
 }
 .post-text {
 font-family: "FuenteRegular";
 font-size: 1rem;
+margin-top: 0.5rem;
 margin-bottom: 0.5rem;
 }
 
+.post-text p {
+align-content: center;
+}
 .post {
 display: flex;
 padding: 0.5rem;
@@ -113,7 +112,7 @@ margin-top: 0.2rem;
 .post-icons i {
 font-size: 1rem;
 color: #868383;
-margin-right: 6rem;
+margin-right: 2rem;
 }
 
 </style>
