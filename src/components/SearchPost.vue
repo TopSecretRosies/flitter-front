@@ -6,7 +6,7 @@
         v-model.lazy="search"
         class="form-control col-sm-6"
         type="search"
-        placeholder="Search"
+        placeholder="Buscar en Flitter "
         aria-label="Search"
         minlength="3"
       />
