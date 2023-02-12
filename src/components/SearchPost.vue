@@ -1,8 +1,10 @@
 <template>
-    <form class="d-flex " role="search">
+    <form class="d-flex container" role="search">
+      <div class="row"></div>
+      <div class="col-sm-3"></div>
       <input
         v-model.lazy="search"
-        class="form-control"
+        class="form-control col-sm-6"
         type="search"
         placeholder="Search"
         aria-label="Search"
@@ -11,7 +13,7 @@
       <button
         type="button"
         @click="validateSearch"
-        class="btn btn-outline-success"
+        class="btn btn-outline-success col-sm-3"
       >
         Search
       </button>
@@ -61,12 +63,31 @@
 
 <style>
 
+form {
+margin-top: 10px;
+}
+
 @font-face {
   font-family: "FuenteRegular";
   src: url(../assets/FuenteRegular.ttf);
 }
 .form-control {
+color: black;
+text-align: center;
+margin-right: 15px;
+width: 40%;
 font-family: "FuenteRegular";
-background-image: url(../assets/fondoLogIn.jpg);
+border-radius: 21px;
+border: #40aac5 solid 1px;
+}
+
+.d-flex button{
+    font-family: "FuenteTitulo";
+    font-size: 16px;
+    color: #fff;
+    width: 120px;
+    height: 42px;
+    border-radius: 21px;
+    background: #40aac5;
 }
 </style>
