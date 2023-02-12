@@ -4,8 +4,7 @@
     <div class="container-fluid">
       <div class="row">
         <div id="busqueda">
-          <input type="search" placeholder="Buscar en Flitter" />
-          <img src="../assets/lupa.svg" alt="lupa" />
+          <SearchPost/>
         </div>
       </div>
       <div class="col col-sm-1 col-md-10 col-lg-12 text-center">
@@ -29,6 +28,7 @@ import { defineComponent } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import PubliCation from "@/components/PubliCation.vue";
 import usePublications from "@/composables/usePublications";
+import SearchPost from "@/components/SearchPost.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -36,6 +36,7 @@ export default defineComponent({
   components: {
     NavBar,
     PubliCation,
+    SearchPost
   },
 
   setup() {
@@ -180,31 +181,6 @@ export default defineComponent({
   height: 40px;
 }
 
-#busqueda input {
-  position: fixed;
-  width: 20rem;
-  height: 45px;
-  top: 5rem;
-  left: 70%;
-  background-color: #f0f3f4;
-  border-radius: 3%;
-  text-align: right;
-  border-radius: 3rem;
-  border: #f0f3f4;
-  background-color: #f0f3f4;
-}
-
-#busqueda img {
-  position: fixed;
-  top: 5.7rem;
-  left: 71%;
-  text-align: right;
-  border-radius: 3rem;
-  width: 20px;
-  height: 25px;
-  border: #f0f3f4;
-  background-color: #f0f3f4;
-}
 
 .follow {
   position: fixed;

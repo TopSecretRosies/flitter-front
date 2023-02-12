@@ -50,7 +50,11 @@ export default defineComponent({
 
             return moment(dt, "YYYYMMDD").fromNow();
         }
-    }
+    },
+
+    
+
+    
 })
 </script>
 

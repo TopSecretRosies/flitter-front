@@ -15,6 +15,9 @@ const usePublications = () => {
         //Actions
         fetchPublications: () => store.dispatch('publications/fetchPublications'),
         createPublications: (data: Publications) => store.dispatch('publications/createPublications', data),
+        searchPublications: (postName: string) => {
+            store.dispatch("publications/searchPublications", postName)
+        }
 
     }
 }

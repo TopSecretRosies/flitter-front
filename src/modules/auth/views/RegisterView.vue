@@ -11,6 +11,7 @@
         class="input100"
         type="text"
         placeholder="Nombre"
+        pattern="/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/"
         required
       />
       <span class="focus-input100" data-placeholder="&#xe82a;"></span>
@@ -25,6 +26,7 @@
         class="input100"
         type="email"
         placeholder="Correo"
+        pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"
         required
       />
       <span class="focus-input100" data-placeholder="&#xe818;"></span>

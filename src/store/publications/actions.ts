@@ -13,7 +13,7 @@ const actions: ActionTree<IPublicationState, IState> = {
         );
         commit('setIsLoading', false);
         commit('setPublications', data);
-        console.log(data)
+        //console.log(data)
     },
     async createPublications({commit}, post: Publications) {
         const{ data } = await flitterApi.post(
@@ -22,7 +22,20 @@ const actions: ActionTree<IPublicationState, IState> = {
         commit('setIsLoading', false);
         commit('setPublications', data);
         console.log(data)
-    }
+    },
+
+    // Llamamos a la API para poder buscar el producto por su nombre
+    async searchPublications({ commit }, postName: string) {
+    commit("setIsLoading", true);
+    const { data } = await flitterApi.get<unknown, AxiosResponse<Publications>>(
+      `/posts/search/${postName}`
+    );
+    commit("setIsLoading", false);
+    commit('setPublications', data);
+    console.log(data)
+  },
+
+
 
     
 };
