@@ -8,6 +8,7 @@ export interface IAuthState {
   auth: Auth[],
   isLoading: boolean,
   token: Auth |null ,
+
   
 }
 
@@ -17,6 +18,7 @@ function state(): IAuthState {
     auth: [],
     isLoading: false,
     token: null,
+  
     
     
   }

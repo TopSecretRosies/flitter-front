@@ -9,7 +9,7 @@ const actions: ActionTree<IPublicationState, IState> = {
     async fetchPublications({commit}) {
         commit("setIsLoading", true);
         const{ data } = await flitterApi.get<unknown, AxiosResponse<Publications[]>>(
-            '/posts'
+            '/posts/all/chronologically'
         );
         commit('setIsLoading', false);
         commit('setPublications', data);

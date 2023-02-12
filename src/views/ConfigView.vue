@@ -5,8 +5,14 @@
       <div class="row">
         <div class="mb-3">
           <div v-if="!isLoading" class="profileUser">
+            <form @submit.prevent="savePost()">
+              <div class="mb-3">
+                <input @change="handleImage" class="form-control" type="file" name="image" accept="png" id="formFile"  />
+                <button class="btn btn-primary btn-lg">Enviar</button>
+              </div>
+            </form>
             <form>
-              <img src="../assets/mujer.jpg" class="img-fluid mx-auto d-block" alt=""/>
+              <img :src="getUser.avatar" class="img-fluid mx-auto d-block" alt=""/>
               <div class="form-row">
                 <div class="form-group ">
                   <label for="inputEmail4">Nombre</label>
@@ -48,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 import NavBar from "@/components/NavBar.vue";
 import useAuth from "@/modules/auth/composables/useAuth";
@@ -67,10 +73,38 @@ export default defineComponent({
     
     fetchUser(auth.value);
 
+    
+    let image = ref("")
+
+    const handleImage = (event:any) => {
+      image.value = event.target.files[0]
+    }
+
+    const savePost = () => {
+      let data = new FormData();
+      data.append('image', image.value)
+    
+      if(image.value === "") {
+        alert("Debes de poner un texto o una imagen")
+      } else {
+         fetch("http://localhost:3000/api/auth/profile", {
+          method: "POST",
+          body: data,
+
+         })
+         .then(res => console.log(res))
+
+      }
+
+    }
+
+
     return {
       getUser,
       isLoading,
       fetchUser,
+      savePost,
+      handleImage
      
     };
   },
