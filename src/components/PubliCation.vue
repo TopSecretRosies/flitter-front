@@ -16,6 +16,9 @@
                 <!-- <img :src="publication.image"/> -->
                 <img class="img-fluid" :src="publication.image" />
             </div>
+            <div>
+                {{formatDate(publication.createdAt)}}
+            </div>
             <div class="post-icons col-12">
                 <i class="far fa-comment"></i>
                 <i class="fas fa-retweet"></i>
@@ -32,7 +35,8 @@
 
 <script lang="ts">
 import { Publications } from '@/models/Publications';
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType } from 'vue';
+import moment from 'moment'
 export default defineComponent({
     props: {
         publication: {
@@ -40,6 +44,13 @@ export default defineComponent({
             required: true,
         },
     },
+
+   methods: {
+        formatDate: function(dt:any){
+
+            return moment(dt, "YYYYMMDD").fromNow();
+        }
+    }
 })
 </script>
 
@@ -109,4 +120,6 @@ font-size: 1rem;
 color: #868383;
 margin-right: 2rem;
 }
+
+
 </style>
