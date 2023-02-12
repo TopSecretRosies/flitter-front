@@ -1,7 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-lg color-nav">
+    <nav class="navbar navbar-expand-lg color-nav ">
       <div class="container-fluid">
-        <img class="logo" src="../assets/logo.png" />
+        <img class="logo" src="../assets/logo.png"/>
       <button
         class="navbar-toggler"
         type="button"
@@ -103,8 +103,8 @@ export default defineComponent({
 
 .logo {
   margin-left: 50px;
-  width: 8%;
-  height: 6%;
+  width: 10%;
+  height: 8%;
 }
 
 li {
