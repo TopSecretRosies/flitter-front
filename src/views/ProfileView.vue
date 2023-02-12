@@ -6,11 +6,11 @@
         <div class="posts">
           <div class="post">
             <div class="user-avatar">
-              <img :src="getUser.user.avatar" />
+              <img :src="getUser.user?.avatar" />
             </div>
             <div class="post-content">
               <div class="post-user-info">
-                <h2 class="card-title">{{ getUser.user.username}}</h2>
+                <h2 class="card-title">{{ getUser.user?.username}}</h2>
                 <i class="fas fa-check-circle"></i>
                 <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
               </div>

@@ -46,7 +46,7 @@ const actions: ActionTree<IAuthState, IState> = {
         );
         commit('setIsLoading', false);
         commit('setUser', data);
-        localStorage.setItem('username', data.username);
+        localStorage.setItem('username', data.user.username);
     },
 
      // Función para borrar el token

@@ -37,7 +37,7 @@
         <ul class="navbar-nav float-right d-flex align-items-md-center">
           <li class="nav-item">
 
-           <p>Bienvenido/a {{ getUser.username }} </p>
+           <p>Bienvenido/a {{ getUser.user?.username }} </p>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{name: 'login'}"

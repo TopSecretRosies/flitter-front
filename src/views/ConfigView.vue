@@ -16,15 +16,15 @@
               <div class="form-row">
                 <div class="form-group ">
                   <label for="inputEmail4">Nombre</label>
-                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.username }}</div>
+                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.username }}</div>
                 </div>
                 <div class="form-group ">
                   <label for="inputEmail4">Email</label>
-                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.email }}</div>
+                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.email }}</div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword4">Password</label>
-                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.password }}</div>
+                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ }}</div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword4">Repite password</label>
