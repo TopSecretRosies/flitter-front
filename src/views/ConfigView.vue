@@ -6,21 +6,21 @@
         <div class="mb-3">
           <div v-if="!isLoading" class="profileUser">
             <form @submit.prevent="savePost()">
-              <div class="mb-3">
+              <div class="mb-3 d-flex">
                 <input @change="handleImage" class="form-control" type="file" name="image" accept="png" id="formFile"  />
                 <button class="btn btn-primary btn-lg">Enviar</button>
               </div>
             </form>
             <form>
-              <img :src="getUser.avatar" class="img-fluid mx-auto d-block" alt=""/>
+              <img src="" class="img-fluid mx-auto d-block" alt=""/>
               <div class="form-row">
                 <div class="form-group ">
                   <label for="inputEmail4">Nombre</label>
-                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.username }}</div>
+                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.username }}</div>
                 </div>
                 <div class="form-group ">
                   <label for="inputEmail4">Email</label>
-                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.email }}</div>
+                  <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.email }}</div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword4">Password</label>

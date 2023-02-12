@@ -27,17 +27,16 @@
     setup() {
       const { searchPublications, publications } = usePublications();
       const search = ref("");
-      console.log(search)
       const postAll = publications.value;
+      console.log(postAll)
       // Comprobamos que el buscador no acepte menos de tres letras para hacer su búsqueda
       const validateSearch = () => {
         if (search.value.length < 3) {
           alert("Por favor, ingresa mínimo tres letras");
-          
+          console.log(search)
         } else {
           const filterPost =
             search.value.charAt(0).toUpperCase() + search.value.slice(1);
-           console.log(search)
           for (let i = 0; i < postAll.length; i++) {
             if (postAll[i].text.includes(filterPost)) {
               const textPost = postAll[i].text.split(" ");
