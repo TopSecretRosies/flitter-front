@@ -4,6 +4,7 @@
         <img class="logo" src="../assets/logo.png"/>
       <button
         class="navbar-toggler"
+        style="background-color: #00c6eb;"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNavAltMarkup"
@@ -13,9 +14,9 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+          <ul class="navbar-nav mx-auto" >
+            <li class="nav-item" >
               <router-link class="nav-link" :to="{ name: 'home'}"
                 >Home</router-link
               >
@@ -101,10 +102,9 @@ export default defineComponent({
   
 }
 
+
 .logo {
-  margin-left: 50px;
   width: 10%;
-  height: 8%;
 }
 
 li {
@@ -126,15 +126,14 @@ p {
   color: white;
   margin: 0 32px;
   font-family: "FuenteTitulo";
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 
-
 .fa-solid {
 margin-top: 15px;
-margin-right: 50px;
+margin-right: 10px;
 }
     
 </style>
