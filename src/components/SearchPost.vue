@@ -1,8 +1,8 @@
 <template>
-    <form class="d-flex" role="search">
+    <form class="d-flex " role="search">
       <input
         v-model.lazy="search"
-        class="form-control me-2"
+        class="form-control"
         type="search"
         placeholder="Search"
         aria-label="Search"
@@ -58,3 +58,15 @@
     },
   });
   </script>
+
+<style>
+
+@font-face {
+  font-family: "FuenteRegular";
+  src: url(../assets/FuenteRegular.ttf);
+}
+.form-control {
+font-family: "FuenteRegular";
+background-image: url(../assets/fondoLogIn.jpg);
+}
+</style>
