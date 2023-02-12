@@ -100,7 +100,7 @@ export default defineComponent({
     const handleImage = (event: any) => {
       image.value = event.target.files[0];
     };
-
+    const token = localStorage.getItem('token')
     const savePost = () => {
       let data = new FormData();
       data.append("image", image.value);
@@ -111,6 +111,9 @@ export default defineComponent({
       } else {
         fetch("http://localhost:3000/api/posts/", {
           method: "POST",
+          headers: {
+            'x-access-token': `${token}`
+          },
           body: data,
         }).then((res) => console.log(res));
       }
