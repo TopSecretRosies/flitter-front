@@ -46,9 +46,9 @@ export default defineComponent({
     },
 
    methods: {
-        formatDate: function(dt:any){
+        formatDate: function(dt:string){
 
-            return moment(dt, "YYYYMMDD").fromNow();
+            return moment(dt, "YYYYMMDD hh:mm:ss").fromNow();
         }
     },
 

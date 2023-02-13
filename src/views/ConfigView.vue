@@ -12,7 +12,7 @@
               </div>
             </form>
             <form>
-              <img :src="getUser.avatar" class="img-fluid mx-auto d-block" alt=""/>
+              <img :src="getUser.user.avatar" class="img-fluid mx-auto d-block" alt=""/>
               <div class="form-row">
                 <div class="form-group ">
                   <label for="inputEmail4">Nombre</label>
@@ -74,22 +74,23 @@ export default defineComponent({
     fetchUser(auth.value);
 
     
-    let image = ref("")
-
+    let avatar = ref("")
+    const token = localStorage.getItem("token");
     const handleImage = (event:any) => {
-      image.value = event.target.files[0]
+      avatar.value = event.target.files[0]
     }
 
     const savePost = () => {
       let data = new FormData();
-      data.append('image', image.value)
-    
-      if(image.value === "") {
+      data.append('avatar', avatar.value)
+      location.reload();
+      if(avatar.value === "") {
         alert("Debes de poner un texto o una imagen")
       } else {
-         fetch("http://localhost:3000/api/auth/profile", {
+         fetch(`http://localhost:3000/api/auth/profile`, {
           method: "POST",
           body: data,
+          headers: { "x-access-token": `${token}` },
 
          })
          .then(res => console.log(res))
