@@ -71,6 +71,7 @@ import useAuth from "@/modules/auth/composables/useAuth";
 import { defineComponent } from "@vue/runtime-core";
 export default defineComponent({
 name: "NavBar",
+
 setup() {
   // Borramos el token para salir de la página y que nos vuelva al login
   const { deleteToken, getUser } = useAuth();

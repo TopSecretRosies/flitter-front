@@ -110,6 +110,7 @@ export default defineComponent({
       let data = new FormData();
       data.append("image", image.value);
       data.append("text", text.value);
+      location.reload();
       console.log(image);
       if (text.value === "") {
         alert("Debes de poner un texto o una imagen");

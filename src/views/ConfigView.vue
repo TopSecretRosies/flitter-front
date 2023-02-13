@@ -74,17 +74,17 @@ export default defineComponent({
     fetchUser(auth.value);
 
     
-    let image = ref("")
+    let avatar = ref("")
     const token = localStorage.getItem("token");
     const handleImage = (event:any) => {
-      image.value = event.target.files[0]
+      avatar.value = event.target.files[0]
     }
 
     const savePost = () => {
       let data = new FormData();
-      data.append('image', image.value)
-    
-      if(image.value === "") {
+      data.append('avatar', avatar.value)
+      location.reload();
+      if(avatar.value === "") {
         alert("Debes de poner un texto o una imagen")
       } else {
          fetch(`http://localhost:3000/api/auth/profile`, {
