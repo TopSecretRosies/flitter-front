@@ -5,8 +5,8 @@
                 <img src="../assets/mujer.jpg" />
             </div>
             <div class="post-content col-3">
-                <div class="post-user-info">
-                    <h4>{{ publication.author }}</h4>
+                <div class="post-user-info" v-for="author in publication.author" :key="author.username" :author="author">
+                    <h4>{{ author.username }}</h4>
                     <i class="fas fa-check-circle"></i>
                     <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
                 </div>

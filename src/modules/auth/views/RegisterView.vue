@@ -11,7 +11,7 @@
         class="input100"
         type="text"
         placeholder="Nombre"
-        pattern="/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/"
+        pattern=""
         required
       />
       <span class="focus-input100" data-placeholder="&#xe82a;"></span>

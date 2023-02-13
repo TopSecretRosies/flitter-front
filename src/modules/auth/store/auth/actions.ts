@@ -56,6 +56,11 @@ const actions: ActionTree<IAuthState, IState> = {
         localStorage.removeItem("username");
         router.push({ name: "home" });
     },
+
+    // Función para obtener al usuario por su Id
+    async fetchUserId({commit}) {
+        
+    }
 }
 
 export default actions;

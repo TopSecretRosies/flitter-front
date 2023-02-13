@@ -3,7 +3,7 @@ export interface Publications {
     text:      string;
     createdAt?: string;
     updatedAt?: string;
-    author?:   string;
+    author?:   [{username: string}];
     image:    string;
   
 }
