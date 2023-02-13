@@ -1,8 +1,8 @@
 <template>
     <div class="post container">
         <div class="row">
-            <div class="user-avatar col-2">
-                <img src="../assets/mujer.jpg" />
+            <div class="user-avatar col-2" v-for="author in publication.author" :key="author.id" :author="author">
+                <img :src="author.avatar" />
             </div>
             <div class="post-content col-3">
                 <div class="post-user-info" v-for="author in publication.author" :key="author.username" :author="author">

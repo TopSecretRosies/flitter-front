@@ -58,8 +58,14 @@ const actions: ActionTree<IAuthState, IState> = {
     },
 
     // Función para obtener al usuario por su Id
-    async fetchUserId({commit}) {
-        
+    async fetchUserId({commit}, postId: string) {
+        commit('setIsLoading', true);
+        const { data } = await flitterApi.get<unknown, AxiosResponse<Users>>(
+            `/users/${postId}`
+          );
+        commit("setIsLoading", false);
+        commit("setUser", data);
+
     }
 }
 
