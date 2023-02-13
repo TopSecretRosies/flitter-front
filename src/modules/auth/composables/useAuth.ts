@@ -16,7 +16,8 @@ const useAuth = () => {
        createUser: (data: Users) => store.dispatch('auth/createUser', data),
        fetchToken: (data: Auth) => store.dispatch('auth/fectToken', data),
        fetchUser: (token: string) => store.dispatch('auth/fetchUser', token),
-       deleteToken: () => store.dispatch('auth/deleteToken')
+       deleteToken: () => store.dispatch('auth/deleteToken'),
+       fetchUserId: (postId: string) => store.dispatch('auth/fetchUserId', postId)
        
           
     }

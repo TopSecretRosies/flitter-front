@@ -181,6 +181,31 @@ export default defineComponent({
   height: 40px;
 }
 
+#busqueda input {
+  position: fixed;
+  width: 20rem;
+  height: 45px;
+  top: 5rem;
+  left: 70%;
+  background-color: #f0f3f4;
+  border-radius: 3%;
+  text-align: right;
+  border-radius: 3rem;
+  border: #f0f3f4;
+  background-color: #f0f3f4;
+}
+
+#busqueda img {
+  position: fixed;
+  top: 5.7rem;
+  left: 71%;
+  text-align: right;
+  border-radius: 3rem;
+  width: 20px;
+  height: 25px;
+  border: #f0f3f4;
+  background-color: #f0f3f4;
+}
 
 .follow {
   position: fixed;

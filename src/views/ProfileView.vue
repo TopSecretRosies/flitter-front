@@ -2,6 +2,7 @@
   <NavBar />
   <div class="container-fluid text-center mt-8">
     <div class="row">
+      <h1>Tus publicaciones</h1>
       <div class="mb-3">
         <div class="posts">
           <div class="post">
@@ -110,7 +111,7 @@ export default defineComponent({
       data.append("image", image.value);
       data.append("text", text.value);
       console.log(image);
-      if (text.value === "" || image.value === "") {
+      if (text.value === "") {
         alert("Debes de poner un texto o una imagen");
       } else {
         fetch("http://localhost:3000/api/posts/", {
