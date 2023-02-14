@@ -51,7 +51,7 @@ import { defineComponent, ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import useAuth from "@/modules/auth/composables/useAuth";
 
-
+//.slice(0, itemsPerPage)
 
 export default defineComponent({
   name: "ProfileView",

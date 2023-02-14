@@ -7,7 +7,7 @@
           <SearchPost/>
         </div>
       </div>
-      <div class="col col-sm-1 col-md-10 col-lg-12 text-center">
+      <div class="col col-sm-1 col-md-10 col-lg-12">
         <div class v-if="isLoading">Cargando...</div>
         <div v-else>
           <PubliCation

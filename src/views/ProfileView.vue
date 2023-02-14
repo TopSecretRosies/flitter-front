@@ -1,40 +1,22 @@
 <template>
   <NavBar />
-  <div class="container-fluid text-center mt-8">
-    <div class="row">
-      <h1>Tus publicaciones</h1>
-      <div class="mb-3">
-        <div class="posts">
-          <div class="post">
-            <div class="user-avatar">
-              <img :src="getUser.user?.avatar" />
-            </div>
-            <div class="post-content">
-              <div class="post-user-info">
-                <h2 class="card-title">{{ getUser.user?.username }}</h2>
-                <i class="fas fa-check-circle"></i>
-                <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <form @submit.prevent="savePost()">
-        <div class="col-12">
-          <div class="mb-3">
+  <section class="hero">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-11 offset-sm-1 col-md-9 offset-md-1 col-lg-8 offset-lg-2 ">
+          <form @submit.prevent="savePost()">
             <input
               @change="handleImage"
-              class="form-control shadow-none p-3 mb-5 bg-light rounded w-100 "
+              class="form-control shadow-none p-3 mb-5 bg-light rounded w-100"
               type="file"
               name="image"
               accept="png"
               id="formFile"
             />
-          </div>
           <div>
             <textarea
               v-model.lazy="text"
-              class="form-control shadow-none bg-light rounded w-100 "
+              class="form-control shadow-none bg-light rounded w-100"
               id="text"
               rows="6"
               maxlength="256"
@@ -42,44 +24,151 @@
             ></textarea>
           </div>
           <button class="btn btn-primary btn-lg">Enviar</button>
-        </div>
+    
       </form>
-    </div>
-  </div>
-  <div class="container-fluid text-center">
-    <div
-      class="row"
-      v-for="post in getUser.postList"
-      :key="post.id"
-      :post="post"
-    >
-      <div class="user-avatar col-2">
-        <img :src="getUser.user?.avatar" />
-      </div>
-      <div class="post-content col-3">
-        <div class="post-user-info">
-          <a href="">{{ post.author[0].username }}</a>
-          <i class="fas fa-check-circle"></i>
-          <!-- <p class="publication-date"> {{ publication.publicationDate }}</p> -->
+        
+            <div class="cardbox shadow-lg bg-white" v-for="post in getUser.postList" :key="post.id" :post="post">
+              <div class="cardbox-heading">
+                <!-- START dropdown-->
+                <div class="dropdown float-right">
+                  <button
+                    class="btn btn-flat btn-flat-icon"
+                    type="button"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <em class="fa fa-ellipsis-h"></em>
+                  </button>
+                  <div
+                    class="dropdown-menu dropdown-scale dropdown-menu-right"
+                    role="menu"
+                    style="
+                      position: absolute;
+                      transform: translate3d(-136px, 28px, 0px);
+                      top: 0px;
+                      left: 0px;
+                      will-change: transform;
+                    "
+                  >
+                    <a class="dropdown-item" href="#">Hide post</a>
+                    <a class="dropdown-item" href="#">Stop following</a>
+                    <a class="dropdown-item" href="#">Report</a>
+                  </div>
+                </div>
+                <!--/ dropdown -->
+                <div class="media m-0">
+                  <div class="d-flex mr-3">
+                    <a href=""
+                      ><img
+                        class="img-fluid rounded-circle"
+                        :src="getUser.user?.avatar"
+                        alt="User"
+                    /></a>
+                  </div>
+                  <div class="media-body">
+                    <p class="m-0">{{ post.author[0].username }}</p>
+                    <small
+                      ><span
+                        ><i class="icon ion-md-time"></i
+                        >{{ formatDate(post.createdAt) }}</span
+                      ></small
+                    >
+                  </div>
+                </div>
+                <!--/ media -->
+              </div>
+              <!--/ cardbox-heading -->
+
+              <div class="cardbox-item text-center">
+                <img class="img-fluid" :src="post.image" alt="Image" />
+              </div>
+              <!--/ cardbox-item -->
+              <div class="cardbox-base">
+                <ul class="float-right">
+                  <li>
+                    <a><i class="fa fa-comments"></i></a>
+                  </li>
+                  <li>
+                    <a><em class="mr-5">12</em></a>
+                  </li>
+                  <li>
+                    <a><i class="fa fa-share-alt"></i></a>
+                  </li>
+                  <li>
+                    <a><em class="mr-3">03</em></a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <a><i class="fa fa-thumbs-up"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/3.jpeg"
+                        class="img-fluid rounded-circle"
+                        alt="User"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/1.jpg"
+                        class="img-fluid rounded-circle"
+                        alt="User"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/5.jpg"
+                        class="img-fluid rounded-circle"
+                        alt="User"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/2.jpg"
+                        class="img-fluid rounded-circle"
+                        alt="User"
+                    /></a>
+                  </li>
+                  <li>
+                    <a><span>242 Likes</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="cardbox-base">
+                <p class="">{{ post.text }}</p>
+              </div>
+              <!--/ cardbox-base -->
+              <div class="cardbox-comments">
+                <span class="comment-avatar float-left">
+                  <a href=""
+                    ><img
+                      class="rounded-circle"
+                      :src="getUser.user?.avatar"
+                      alt="..."
+                  /></a>
+                </span>
+                <div class="search">
+                  <input placeholder="Write a comment" type="text" />
+                  <button><i class="fa fa-camera"></i></button>
+                </div>
+                <!--/. Search -->
+              </div>
+              <!--/ cardbox-like -->
+            </div>
+            <!--/ cardbox -->
+          </div>
+
+ <!--/ col-lg-3 -->
         </div>
-      </div>
-      <p class="post-text row col-12">{{ post.text }}</p>
-      <div class="post-image col-12">
-        <!-- <img :src="publication.image"/> -->
-        <img class="img-fluid" :src="post.image" />
-      </div>
-      <div>
-        {{ formatDate(post.createdAt) }}
-      </div>
-      <div class="post-icons col-12">
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <!-- <p>{{ publication.kudos }} kudos</p> -->
-        <i class="fas fa-share-alt"></i>
-      </div>
+      <!--/ row -->
     </div>
-  </div>
+    <!--/ container -->
+  </section>
 </template>
 
 <script lang="ts">
@@ -136,243 +225,247 @@ export default defineComponent({
 </script>
 
 <style scoped>
-* {
-  max-width: 100%;
+.hero {
+  padding: 3.25rem 0px !important;
+  margin: 0px !important;
 }
-.user-avatar {
-  width: 6rem;
-  height: 6rem;
+.cardbox {
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 0px !important;
 }
-.user-avatar img {
-  object-fit: cover;
-  margin-top: 16%;
-  width: 6rem;
-  height: 6rem;
+
+/* ------------------------------- */
+/* Cardbox Heading
+---------------------------------- */
+.cardbox .cardbox-heading {
+  padding: 16px;
+  margin: 0;
+}
+.cardbox .btn-flat.btn-flat-icon {
   border-radius: 50%;
-}
-.post-user-info {
+  font-size: 24px;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  overflow: hidden;
+  color: #fff !important;
+  background: #b5b6b6;
+
   display: flex;
-  margin: 4rem 5px;
-}
-
-.post-user-info h4 {
-  font-family: "FuenteTitulo";
-  color: black;
-  font-size: 1.3rem;
-  align-items: center;
-  margin-right: 0.5rem;
-}
-.post-user-info i {
-  font-size: 1rem;
-  color: rgb(31, 197, 243);
-}
-.post-image {
-  width: 100%;
-}
-.post-image img {
-  width: 40%;
-  border: 0.1rem solid rgba(0, 0, 0, 0.438);
-  border-radius: 2%;
-}
-.post-text {
-  font-family: "FuenteRegular";
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  margin-top: -3rem;
-  margin-left: 8.3%;
-}
-.post {
-  display: flex;
-  padding: 0.5rem;
-  border-bottom: 0.1 rem solid #eee;
-}
-.post-icons {
-  margin-top: 0.2rem;
-}
-.post-icons i {
-  font-size: 1rem;
-  color: #868383;
-  margin-right: 2rem;
-}
-
-@font-face {
-  font-family: "FuenteTitulo";
-  src: url(../modules/auth/css/fonts/FuenteTitulo.ttf);
-}
-
-@font-face {
-  font-family: "FuenteRegular";
-  src: url("../modules/auth/css/fonts/FuenteRegular.ttf");
-}
-
-.header-top {
-  background-color: #fff;
-  top: 0%;
-  left: 300px;
-  width: 445px;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  font-family: "FuenteTitulo";
-  justify-content: space-between;
-  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.433);
-}
-
-.header-top h4 {
-  margin: 20px 0px 0px 30px;
-  font-size: 2.4rem;
-}
-
-.header-top i {
-  font-size: 2.2rem;
-  color: #868383;
-}
-
-.header-post {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  border-bottom: 0.1rem solid #eee;
-}
-
-.image-upload {
-  margin-top: 10px;
-  margin-left: 180px;
-  width: 35rem;
-  height: 3rem;
-  display: flex;
-}
-
-.image-upload > input {
-  display: none;
-}
-
-.image-upload img {
-  width: 5%;
-}
-
-.header-img-wrapper {
-  width: 5rem;
-  height: 5rem;
-
-  margin-left: 60px;
-}
-.header-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  margin-top: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.header-post {
-  display: block;
+  flex-direction: column;
   justify-content: center;
-  margin-left: 40px;
-  width: 845px;
-  height: 50px;
-  border-bottom: 0.1rem solid #eee;
-}
-
-.header-post #post {
-  font-family: "FuenteRegular";
-  margin-left: 150px;
-  width: 570px;
-  height: 3rem;
-  border: 0.1rem solid #00c6eb;
-  border-radius: 3rem;
-  background-color: #d6e1e9;
-  padding: 0.4rem 1.5rem;
-}
-
-.header-post i {
-  font-size: 2.5rem;
-  margin: 1rem;
-}
-
-
-
-
-.follow {
-  position: fixed;
-  width: 30rem;
-  top: 9rem;
-  left: 65%;
-  background-color: #f0f3f4;
-  border-radius: 3%;
-}
-
-.follow_heading {
-  font-family: "FuenteTitulo";
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-bottom: 0.1rem solid #fff;
-}
-
-.follow_user {
-  display: flex;
   align-items: center;
-  padding: 1.5rem;
-  border-bottom: 0.1rem solid #fff;
+  text-align: center;
 }
-
-.follow_user_img {
-  width: 6rem;
-  height: 6rem;
-  margin-right: 2rem;
+.cardbox .float-right .dropdown-menu {
+  position: relative;
+  left: 13px !important;
 }
-
-.follow_user_img img {
+.cardbox .float-right a:hover {
+  background: #f4f4f4 !important;
+}
+.cardbox .float-right a.dropdown-item {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  padding: 4px 0px 4px 10px;
+  clear: both;
+  font-weight: 400;
+  font-family: "Abhaya Libre", serif;
+  font-size: 14px !important;
+  color: #848484;
+  text-align: inherit;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
 }
 
-.follow_user_info h4 {
-  font-family: "FuenteTitulo";
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.follow_user_info p {
-  font-family: "FuenteRegular";
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.follow_btn {
-  font-family: "FuenteTitulo";
-  margin-left: auto;
-  width: 5rem;
-  height: 2rem;
-  color: #fff;
-  background-color: black;
-  border: 0.1rem solid black;
-  border-radius: 3rem;
-  cursor: pointer;
-}
-
-.follow_link {
-  margin: 2rem 1rem;
-}
-
-.follow_link a {
-  font-family: "FuenteRegular";
-  font-size: large;
-  text-decoration: none;
-}
-
-.follow_footer ul {
-  list-style: none;
+/* ------------------------------- */
+/* Media Section
+---------------------------------- */
+.media {
+  display: -ms-flexbox;
   display: flex;
-  padding: 0.2rem 0;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.media .mr-3 {
+  margin-right: 1rem !important;
+}
+.media img {
+  width: 88px !important;
+  height: 78px !important;
+  padding: 2px;
+  border: 2px solid #f4f4f4;
+}
+.media-body {
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0.4rem !important;
+}
+.media-body p {
+  font-family: "Rokkitt", serif;
+  font-weight: 500 !important;
+  font-size: 24px;
+  color: #88898a;
 }
 
-.follow_footer a {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #868383;
-  margin: 0.3rem;
+.media-body small span {
+  font-family: "Rokkitt", serif;
+  font-size: 12px;
+  color: #aaa;
+  margin-right: 10px;
+}
+
+/* ------------------------------- */
+/* Cardbox Item
+---------------------------------- */
+.cardbox .cardbox-item {
+  display: block;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.fw {
+  width: 100% !important;
+  height: auto;
+}
+
+/* ------------------------------- */
+/* Cardbox Base
+---------------------------------- */
+.cardbox-base {
+  border-bottom: 2px solid #f4f4f4;
+}
+.cardbox-base ul {
+  margin: 10px 0px 10px 15px !important;
+  padding: 10px !important;
+  font-size: 0px;
+  display: inline-block;
+}
+.cardbox-base li {
+  list-style: none;
+  margin: 0px 0px 0px -8px !important;
+  padding: 0px 0px 0px 0px !important;
+  display: inline-block;
+}
+
+.cardbox-base li a {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.cardbox-base li a i {
+  position: relative;
+  top: 4px;
+  font-size: 16px;
+  color: #8d8d8d;
+  margin-right: 15px;
+}
+.cardbox-base li a span {
+  font-family: "Rokkitt", serif;
+  font-size: 14px;
+  color: #8d8d8d;
+  margin-left: 20px;
+  position: relative;
+  top: 5px;
+}
+.cardbox-base li a em {
+  font-family: "Rokkitt", serif;
+  font-size: 14px;
+  color: #8d8d8d;
+  position: relative;
+  top: 3px;
+}
+.cardbox-base li a img {
+  width: 25px;
+  height: 25px;
+  margin: 0px !important;
+  border: 2px solid #fff;
+}
+
+/* ------------------------------- */
+/* Cardbox Comments
+---------------------------------- */
+.cardbox-comments {
+  padding: 10px 40px 20px 40px !important;
+  font-size: 0px;
+  text-align: center;
+  display: inline-block;
+}
+.cardbox-comments .comment-avatar img {
+  margin-top: 1px;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+.cardbox-comments .comment-body {
+  overflow: auto;
+}
+.search {
+  position: relative;
+  right: -60px;
+  top: -40px;
+  margin-bottom: -40px;
+  border: 2px solid #f4f4f4;
+  width: 100%;
+  overflow: hidden;
+}
+.search input[type="text"] {
+  background-color: #fff;
+  line-height: 10px;
+  padding: 15px 60px 20px 10px;
+  border: none;
+  border-radius: 4px;
+  width: 350px;
+  font-family: "Rokkitt", serif;
+  font-size: 14px;
+  color: #8d8d8d;
+  height: inherit;
+  font-weight: 700;
+}
+.search button {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  border: none;
+  background-color: transparent;
+  color: #bbbbbb;
+  padding: 15px 25px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.search button i {
+  font-size: 20px;
+  line-height: 30px;
+  display: block;
+}
+
+/* ------------------------------- */
+/* Author
+---------------------------------- */
+.author a {
+  font-family: "Rokkitt", serif;
+  font-size: 16px;
+  color: #00c4cf;
+}
+.author p {
+  font-family: "Rokkitt", serif;
+  font-size: 16px;
+  color: #8d8d8d;
 }
 </style>
