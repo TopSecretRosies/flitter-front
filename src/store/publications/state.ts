@@ -1,22 +1,25 @@
-
 import { Publications } from '../../models/Publications';
-import { Users } from '../../models/users';
- export interface IPublicationState {
+
+export interface IPublicationState {
     publications: Publications[]
     isLoading: boolean;
     
-  
-    
- }
+}
 
- function state(): IPublicationState {
+export interface PublicationsParams {
+   page: number
+   //sort: Publications | undefined
+   //author: string
+   //text: string
+
+}
+
+function state(): IPublicationState {
     return {
         publications: [],
-        isLoading: false, 
-        
-        
+        isLoading: false,
     }
- }
+}
 
 
  export default state;

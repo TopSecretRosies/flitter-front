@@ -26,6 +26,7 @@
           <button class="btn btn-primary btn-lg">Enviar</button>
     
       </form>
+
         
             <div class="cardbox shadow-lg bg-white" v-for="post in getUser.postList" :key="post.id" :post="post">
               <div class="cardbox-heading">
