@@ -109,7 +109,7 @@ font-family: "FuenteRegular";
 font-size: 1rem;
 margin-bottom: 0.5rem;
 margin-top: -3rem;
-margin-left: 8.3%;
+margin-left: 29%;
 }
 .post {
 display: flex;

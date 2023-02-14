@@ -54,7 +54,7 @@
       :post="post"
     >
       <div class="user-avatar col-2">
-        <img :src="post.avatar" />
+        <img :src="getUser.user?.avatar" />
       </div>
       <div class="post-content col-3">
         <div class="post-user-info">
