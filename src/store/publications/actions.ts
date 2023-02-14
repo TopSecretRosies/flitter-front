@@ -11,7 +11,7 @@ const actions: ActionTree<IPublicationState, IState> = {
         const perPage = 10
         const skip = (params.page - 1) * perPage
         //const sort = (params.sort?.createdAt)
-        const{ data } = await flitterApi.get<unknown, AxiosResponse<Publications[](
+        const{ data } = await flitterApi.get<unknown, AxiosResponse<Publications[]>>(
 
             `/posts?skip=${skip}&limit=${perPage}`
         );

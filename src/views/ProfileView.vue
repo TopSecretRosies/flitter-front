@@ -10,7 +10,6 @@
               class="form-control shadow-none p-3 mb-5 bg-light rounded w-100"
               type="file"
               name="image"
-              accept="png"
               id="formFile"
             />
           <div>
