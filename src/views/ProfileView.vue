@@ -24,17 +24,17 @@
           <div class="mb-3">
             <input
               @change="handleImage"
-              class="form-control"
+              class="form-control shadow-none p-3 mb-5 bg-light rounded w-100 "
               type="file"
               name="image"
               accept="png"
               id="formFile"
             />
           </div>
-          <div class="mb-3">
+          <div>
             <textarea
               v-model.lazy="text"
-              class="form-control"
+              class="form-control shadow-none bg-light rounded w-100 "
               id="text"
               rows="6"
               maxlength="256"
@@ -146,13 +146,13 @@ export default defineComponent({
 .user-avatar img {
   object-fit: cover;
   margin-top: 16%;
-  width: 100%;
-  height: 80%;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
 }
 .post-user-info {
   display: flex;
-  margin: 1rem 1px;
+  margin: 4rem 5px;
 }
 
 .post-user-info h4 {
