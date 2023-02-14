@@ -17,6 +17,7 @@
           />
         </div>
       </div>
+      <PaginationButtons :page="page" @prev="setPage(page - 1)" @next="setPage(page + 1)"/>
     </div>
 
  
@@ -24,11 +25,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import PubliCation from "@/components/PubliCation.vue";
 import usePublications from "@/composables/usePublications";
 import SearchPost from "@/components/SearchPost.vue";
+import PaginationButtons from "@/components/PaginationButtons.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -36,17 +38,26 @@ export default defineComponent({
   components: {
     NavBar,
     PubliCation,
-    SearchPost
+    SearchPost,
+    PaginationButtons
   },
 
   setup() {
     const { publications, isLoading, fetchPublications } = usePublications();
+    
+    const page = ref<number>(1)
 
-    fetchPublications();
+    fetchPublications({page: page.value});
 
     return {
+      page,
       publications,
       isLoading,
+      setPage (nextPage: number) {
+        page.value = nextPage
+        console.log(nextPage)
+        fetchPublications({page: nextPage})
+      }
     };
   },
 });
