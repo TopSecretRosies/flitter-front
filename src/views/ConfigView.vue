@@ -5,7 +5,7 @@
       <div>
         <div v-if="!isLoading" class="profileUser">
           <form @submit.prevent="savePost()" class="row">
-              <input @change="handleImage" class="form-control shadow-none p-3 mb-5 bg-light rounded w-100 " type="file" name="image" accept="png" id="formFile" />
+              <input @change="handleImage" class="form-control shadow-none p-3 mb-5 bg-light rounded w-100 " type="file" name="image" id="formFile" />
             <div class="form-group text-center mb-2">
               <button type="submit" class="btn btn-primary ">Enviar</button>
             </div>
