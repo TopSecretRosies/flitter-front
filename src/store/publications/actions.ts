@@ -1,15 +1,19 @@
 import { ActionTree } from 'vuex';
 import { IState } from "..";
-import { IPublicationState } from './state';
+import { IPublicationState, PublicationsParams } from './state';
 import flitterApi from '../../api/fittlerApi';
 import { AxiosResponse } from 'axios';
 import { Publications } from '@/models/Publications';
 
 const actions: ActionTree<IPublicationState, IState> = {
-    async fetchPublications({commit}) {
+    async fetchPublications({commit}, params: PublicationsParams) {
         commit("setIsLoading", true);
-        const{ data } = await flitterApi.get<unknown, AxiosResponse<Publications[]>>(
-            '/posts'
+        const perPage = 10
+        const skip = (params.page - 1) * perPage
+        //const sort = (params.sort?.createdAt)
+        const{ data } = await flitterApi.get<unknown, AxiosResponse<Publications[](
+
+            `/posts?skip=${skip}&limit=${perPage}`
         );
         commit('setIsLoading', false);
         commit('setPublications', data);

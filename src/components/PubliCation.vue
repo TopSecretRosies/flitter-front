@@ -182,6 +182,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
 .hero {
   padding: 3.25rem 0px !important;
   margin: 0px !important;
