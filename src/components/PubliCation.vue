@@ -7,25 +7,16 @@
             <div class="cardbox-heading">
               <!-- START dropdown-->
               <div class="dropdown float-right">
-                <button
-                  class="btn btn-flat btn-flat-icon"
-                  type="button"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                <button class="btn btn-flat btn-flat-icon" type="button" data-toggle="dropdown" aria-expanded="false">
                   <em class="fa fa-ellipsis-h"></em>
                 </button>
-                <div
-                  class="dropdown-menu dropdown-scale dropdown-menu-right"
-                  role="menu"
-                  style="
+                <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu" style="
                     position: absolute;
                     transform: translate3d(-136px, 28px, 0px);
                     top: 0px;
                     left: 0px;
                     will-change: transform;
-                  "
-                >
+                  ">
                   <a class="dropdown-item" href="#">Hide post</a>
                   <a class="dropdown-item" href="#">Stop following</a>
                   <a class="dropdown-item" href="#">Report</a>
@@ -33,33 +24,14 @@
               </div>
               <!--/ dropdown -->
               <div class="media m-0">
-                <div
-                  class="d-flex mr-3"
-                  v-for="author in publication.author"
-                  :key="author.id"
-                  :author="author"
-                >
-                  <a href=""
-                    ><img
-                      class="img-fluid rounded-circle"
-                      :src="author.avatar"
-                      alt="User"
-                  /></a>
+                <div class="d-flex mr-3" v-for="author in publication.author" :key="author.id" :author="author">
+                  <a href=""><img class="img-fluid rounded-circle" :src="author.avatar" alt="User" /></a>
                   <i class="fas fa-check-circle" style="color:darkblue"></i>
                 </div>
-                <div
-                  class="media-body"
-                  v-for="author in publication.author"
-                  :key="author.username"
-                  :author="author"
-                >
+                <div class="media-body" v-for="author in publication.author" :key="author.username" :author="author">
                   <h3 class="m-0">{{ author.username }}</h3>
-                  <small
-                    ><span
-                      ><i class="icon ion-md-time"></i>
-                      {{ formatDate(publication.createdAt) }}</span
-                    ></small
-                  >
+                  <small><span><i class="icon ion-md-time"></i>
+                      {{ formatDate(publication.createdAt) }}</span></small>
                 </div>
               </div>
               <!--/ media -->
@@ -90,36 +62,20 @@
                   <a><i class="fa fa-thumbs-up"></i></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img
-                      src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/3.jpeg"
-                      class="img-fluid rounded-circle"
-                      alt="User"
-                  /></a>
+                  <a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/3.jpeg"
+                      class="img-fluid rounded-circle" alt="User" /></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img
-                      src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/1.jpg"
-                      class="img-fluid rounded-circle"
-                      alt="User"
-                  /></a>
+                  <a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/1.jpg"
+                      class="img-fluid rounded-circle" alt="User" /></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img
-                      src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/5.jpg"
-                      class="img-fluid rounded-circle"
-                      alt="User"
-                  /></a>
+                  <a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/5.jpg"
+                      class="img-fluid rounded-circle" alt="User" /></a>
                 </li>
                 <li>
-                  <a href="#"
-                    ><img
-                      src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/2.jpg"
-                      class="img-fluid rounded-circle"
-                      alt="User"
-                  /></a>
+                  <a href="#"><img src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/2.jpg"
+                      class="img-fluid rounded-circle" alt="User" /></a>
                 </li>
                 <li>
                   <a><span>242 Likes</span></a>
@@ -127,20 +83,13 @@
               </ul>
             </div>
 
-            <div class="cardbox-base text-center">
-              <p class="">{{ publication.text }}</p>
+            <div class="cardbox-base text-center overflow-auto ">
+              <p class="text" style="word-wrap: break-word;">{{ publication.text }}</p>
             </div>
             <!--/ cardbox-base -->
-            <div
-              class="cardbox-comments"
-              v-for="author in publication.author"
-              :key="author.id"
-              :author="author"
-            >
+            <div class="cardbox-comments" v-for="author in publication.author" :key="author.id" :author="author">
               <span class="comment-avatar float-left">
-                <a href=""
-                  ><img class="rounded-circle" :src="author.avatar" alt="..."
-                /></a>
+                <a href=""><img class="rounded-circle" :src="author.avatar" alt="..." /></a>
               </span>
               <div class="search">
                 <input placeholder="Write a comment" type="text" />
@@ -182,14 +131,15 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
-*{
-max-width: 100%;
+* {
+  max-width: 100%;
 }
+
 .hero {
   padding: 3.25rem 0px !important;
   margin: 0px !important;
 }
+
 .cardbox {
   border-radius: 3px;
   margin-bottom: 20px;
@@ -203,6 +153,7 @@ max-width: 100%;
   padding: 16px;
   margin: 0;
 }
+
 .cardbox .btn-flat.btn-flat-icon {
   border-radius: 50%;
   font-size: 24px;
@@ -218,13 +169,16 @@ max-width: 100%;
   align-items: center;
   text-align: center;
 }
+
 .cardbox .float-right .dropdown-menu {
   position: relative;
   left: 13px !important;
 }
+
 .cardbox .float-right a:hover {
   background: #f4f4f4 !important;
 }
+
 .cardbox .float-right a.dropdown-item {
   display: block;
   width: 100%;
@@ -240,6 +194,12 @@ max-width: 100%;
   border: 0;
 }
 
+/* .text{
+overflow: hidden;
+word-wrap: break-word;
+width: 100px;
+height: auto;
+}
 /* ------------------------------- */
 /* Media Section
 ---------------------------------- */
@@ -249,24 +209,29 @@ max-width: 100%;
   -ms-flex-align: start;
   align-items: flex-start;
 }
+
 .d-flex {
   display: -ms-flexbox !important;
   display: flex !important;
 }
+
 .media .mr-3 {
   margin-right: 1rem !important;
 }
+
 .media img {
   width: 88px !important;
   height: 78px !important;
   padding: 2px;
   border: 2px solid #f4f4f4;
 }
+
 .media-body {
   -ms-flex: 1;
   flex: 1;
   padding: 0.4rem !important;
 }
+
 .media-body p {
   font-family: "FuenteRegular";
   font-weight: 500 !important;
@@ -293,6 +258,7 @@ max-width: 100%;
   max-width: 100%;
   height: auto;
 }
+
 .fw {
   width: 100% !important;
   height: auto;
@@ -304,12 +270,14 @@ max-width: 100%;
 .cardbox-base {
   border-bottom: 2px solid #f4f4f4;
 }
+
 .cardbox-base ul {
   margin: 10px 0px 10px 15px !important;
   padding: 10px !important;
   font-size: 0px;
   display: inline-block;
 }
+
 .cardbox-base li {
   list-style: none;
   margin: 0px 0px 0px -8px !important;
@@ -321,6 +289,7 @@ max-width: 100%;
   margin: 0px !important;
   padding: 0px !important;
 }
+
 .cardbox-base li a i {
   position: relative;
   top: 4px;
@@ -328,6 +297,7 @@ max-width: 100%;
   color: #8d8d8d;
   margin-right: 15px;
 }
+
 .cardbox-base li a span {
   font-family: "FuenteRegular";
   font-size: 14px;
@@ -336,6 +306,7 @@ max-width: 100%;
   position: relative;
   top: 5px;
 }
+
 .cardbox-base li a em {
   font-family: "FuenteRegular";
   font-size: 14px;
@@ -343,6 +314,7 @@ max-width: 100%;
   position: relative;
   top: 3px;
 }
+
 .cardbox-base li a img {
   width: 25px;
   height: 25px;
@@ -359,6 +331,7 @@ max-width: 100%;
   text-align: center;
   display: inline-block;
 }
+
 .cardbox-comments .comment-avatar img {
   margin-top: 1px;
   margin-right: 10px;
@@ -368,9 +341,11 @@ max-width: 100%;
   width: 40px;
   height: 40px;
 }
+
 .cardbox-comments .comment-body {
   overflow: auto;
 }
+
 .search {
   position: relative;
   right: -60px;
@@ -380,19 +355,21 @@ max-width: 100%;
   width: 100%;
   overflow: hidden;
 }
+
 .search input[type="text"] {
   background-color: #fff;
   line-height: 10px;
   padding: 15px 60px 20px 10px;
   border: none;
   border-radius: 4px;
-  width: 350px;
+  width: 180px;
   font-family: "FuenteRegular";
   font-size: 14px;
   color: #8d8d8d;
   height: inherit;
   font-weight: 700;
 }
+
 .search button {
   position: absolute;
   right: 0;
@@ -408,6 +385,7 @@ max-width: 100%;
   align-items: center;
   text-align: center;
 }
+
 .search button i {
   font-size: 20px;
   line-height: 30px;
@@ -422,6 +400,7 @@ max-width: 100%;
   font-size: 16px;
   color: #00c4cf;
 }
+
 .author p {
   font-family: "FuenteRegular";
   font-size: 16px;
