@@ -13,7 +13,7 @@ const actions: ActionTree<IPublicationState, IState> = {
         //const sort = (params.sort?.createdAt)
         const{ data } = await flitterApi.get<unknown, AxiosResponse<Publications[]>>(
 
-            `/posts?-skip=${skip}&-limit=${perPage}`
+            `/posts?sort=-createdAt&skip=${skip}&limit=${perPage}`
         );
         commit('setIsLoading', false);
         commit('setPublications', data);
