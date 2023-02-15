@@ -67,7 +67,7 @@
             <!--/ cardbox-heading -->
 
             <div class="cardbox-item text-center">
-              <img class="img-fluid" :src="publication.image" alt="Image" />
+              <img class="img-fluid w-50 rounded mx-auto d-block" :src="publication.image" alt="Image" />
             </div>
             <!--/ cardbox-item -->
             <div class="cardbox-base">
@@ -127,7 +127,7 @@
               </ul>
             </div>
 
-            <div class="cardbox-base">
+            <div class="cardbox-base text-center">
               <p class="">{{ publication.text }}</p>
             </div>
             <!--/ cardbox-base -->
@@ -183,6 +183,9 @@ export default defineComponent({
 
 <style scoped>
 
+*{
+max-width: 100%;
+}
 .hero {
   padding: 3.25rem 0px !important;
   margin: 0px !important;
@@ -209,7 +212,6 @@ export default defineComponent({
   overflow: hidden;
   color: #fff !important;
   background: #b5b6b6;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +231,7 @@ export default defineComponent({
   padding: 4px 0px 4px 10px;
   clear: both;
   font-weight: 400;
-  font-family: "Abhaya Libre", serif;
+  font-family: "FuenteRegular";
   font-size: 14px !important;
   color: #848484;
   text-align: inherit;
@@ -266,14 +268,14 @@ export default defineComponent({
   padding: 0.4rem !important;
 }
 .media-body p {
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-weight: 500 !important;
   font-size: 24px;
   color: #88898a;
 }
 
 .media-body small span {
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-size: 12px;
   color: #aaa;
   margin-right: 10px;
@@ -327,7 +329,7 @@ export default defineComponent({
   margin-right: 15px;
 }
 .cardbox-base li a span {
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-size: 14px;
   color: #8d8d8d;
   margin-left: 20px;
@@ -335,7 +337,7 @@ export default defineComponent({
   top: 5px;
 }
 .cardbox-base li a em {
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-size: 14px;
   color: #8d8d8d;
   position: relative;
@@ -385,7 +387,7 @@ export default defineComponent({
   border: none;
   border-radius: 4px;
   width: 350px;
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-size: 14px;
   color: #8d8d8d;
   height: inherit;
@@ -400,7 +402,6 @@ export default defineComponent({
   color: #bbbbbb;
   padding: 15px 25px;
   cursor: pointer;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -417,12 +418,12 @@ export default defineComponent({
 /* Author
 ---------------------------------- */
 .author a {
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-size: 16px;
   color: #00c4cf;
 }
 .author p {
-  font-family: "Rokkitt", serif;
+  font-family: "FuenteRegular";
   font-size: 16px;
   color: #8d8d8d;
 }

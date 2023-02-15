@@ -12,9 +12,10 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"
+      style="font-size: 12px; text-align: center;"><i id="menu" class="fa-solid fa-bars"></i></span>
     </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mx-auto" >
           <li class="nav-item" >
             <router-link class="nav-link" :to="{ name: 'home'}"
@@ -93,6 +94,14 @@ src: url(../modules/auth/css/fonts/FuenteTitulo.ttf);}
 .color-nav {
 background-image: url("../assets/fondoLogIn.jpg");
 
+}
+#menu{
+  color: black;
+    margin-top:3px;
+    width: 1.5em;
+    height: 1.5em;
+    background: no-repeat center center;
+    background-size: 100% 100%;
 }
 .logo {
 width: 10%;

@@ -1,44 +1,40 @@
 <template>
   <div>
     <NavBar />
-    <div class="container-flex">
-      <div>
-        <div v-if="!isLoading" class="profileUser">
-          <form @submit.prevent="savePost()" class="row">
-              <input @change="handleImage" class="form-control shadow-none p-3 mb-5 bg-light rounded w-100 " type="file" name="image" id="formFile" />
-            <div class="form-group text-center mb-2">
-              <button type="submit" class="btn btn-primary ">Enviar</button>
-            </div>
-          </form>
-          <form>
-            <img :src="getUser.user.avatar" class="img-fluid mx-auto d-block" alt="" />
-            <div class="form-row">
-              <div class="form-group ">
-                <label for="inputEmail4">Nombre</label>
-                <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.username }}</div>
-              </div>
-              <div class="form-group ">
-                <label for="inputEmail4">Email</label>
-                <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.email }}</div>
-              </div>
-              <div class="form-group">
-                <label for="inputPassword4">Password</label>
-                <div class="shadow-none p-4 mb-5 bg-light rounded">{{}}</div>
-              </div>
-              <div class="form-group">
-                <label for="inputPassword4">Repite password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" disabled />
-              </div>
-            </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-11 offset-sm-1 col-md-9 offset-md-1 col-lg-8 offset-lg-2 ">
+          <div>
+            <div v-if="!isLoading" class="profileUser">
+              <form @submit.prevent="savePost()" class="row">
+                <input @change="handleImage" class="form-control shadow-none p-3 mb-5 bg-light rounded w-100 "
+                  type="file" name="image" id="formFile" />
+                <div class="form-group text-center mb-2">
+                  <button type="submit" class="btn btn-primary ">Enviar</button>
+                </div>
+              </form>
+              <form>
+                <img :src="getUser.user.avatar" class="img-fluid  w-50 rounded mx-auto d-block " alt="" />
+                <div class="form-row">
+                  <div class="form-group ">
+                    <label for="inputEmail4">Nombre</label>
+                    <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.username }}</div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="inputEmail4">Email</label>
+                    <div class="shadow-none p-3 mb-5 bg-light rounded">{{ getUser.user.email }}</div>
+                  </div>
+                </div>
+                <div class="form-group text-center mb-4">
+                  <button type="submit" class="btn btn-primary ">Darse de baja</button>
+                </div>
 
-            <div class="form-group text-center mb-4">
-              <button type="submit" class="btn btn-primary ">Darse de baja</button>
+              </form>
             </div>
+            <div v-else>Cargando...</div>
 
-          </form>
+          </div>
         </div>
-        <div v-else>Cargando...</div>
-
       </div>
     </div>
   </div>
@@ -106,22 +102,25 @@ export default defineComponent({
 
 
 <style>
-
-.container-flex{
-margin-left: 10px;
-margin-right: 10px;
+.container-flex {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-input{
+input {
   margin-top: 10px;
 }
 
-.form-control{
-margin-top: 20px;
-margin-bottom: 20px;
+.form-control {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-#btn-primary{
-background-color: rgb(31, 197, 243);
+.form-row {
+  flex-direction: column;
+}
+
+#btn-primary {
+  background-color: rgb(31, 197, 243);
 }
 </style>
